@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-cream: 253 251 247;
+    --color-beige: 245 240 230;
+    --color-gold-light: 229 211 179;
+    --color-gold: 197 168 128;
+    --color-gold-dark: 163 134 93;
+    --color-charcoal-light: 74 74 74;
+    --color-charcoal: 44 44 44;
+    --color-charcoal-dark: 26 26 26;
+    --color-forest-light: 58 90 64;
+    --color-forest: 43 64 46;
+    --color-forest-dark: 28 42 30;
+    
+    /* Fixed colors that do not invert in dark mode */
+    --color-cream-fixed: 253 251 247;
+    --color-charcoal-fixed: 44 44 44;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      /* Invert backgrounds to dark */
+      --color-cream: 26 26 26;       /* maps to charcoal-dark */
+      --color-beige: 44 44 44;       /* maps to charcoal */
+      
+      /* Invert foregrounds to light */
+      --color-charcoal: 253 251 247; /* maps to cream */
+      --color-charcoal-light: 245 240 230; /* maps to beige */
+      --color-charcoal-dark: 255 255 255; /* pure white */
+    }
+  }
+
+  body {
+    background-color: rgb(var(--color-cream));
+    color: rgb(var(--color-charcoal));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default focus outline and replace with elegant ring */
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #FDFBF7, 0 0 0 4px #C5A880;
+}
