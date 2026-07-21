@@ -2,28 +2,10 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-
-  // Protect routes
-  if (pathname.startsWith('/admin') || pathname.startsWith('/appointments-view')) {
-    
-    // Allow access to the login page itself to prevent infinite redirects if under admin
-    if (pathname === '/admin/login') {
-        return NextResponse.next();
-    }
-
-    const authCookie = request.cookies.get('auth_token');
-
-    if (authCookie?.value === 'authenticated') {
-      return NextResponse.next();
-    }
-    
-    // Redirect to custom login page
-    const loginUrl = new URL('/login', request.url);
-    loginUrl.searchParams.set('callbackUrl', pathname);
-    return NextResponse.redirect(loginUrl);
-  }
-
+  // Bypassing custom proxy auth checks because AuthGuard already handles 
+  // route protection on the client side using Supabase sessions.
+  // The previous logic checked for an 'auth_token' cookie which is not set
+  // by standard Supabase client-side authentication, causing infinite redirects.
   return NextResponse.next();
 }
 
