@@ -1,4 +1,7 @@
+"use client";
+
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { 
     LayoutDashboard, 
     CalendarCheck, 
@@ -8,12 +11,20 @@ import {
     LogOut
 } from 'lucide-react';
 import { AuthGuard } from '@/components/ui/AuthGuard';
+import { supabase } from '@/lib/supabase';
 
 export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    router.push('/login');
+  };
+
   return (
     <AuthGuard>
       <div className="flex min-h-screen bg-cream font-sans">
@@ -47,7 +58,10 @@ export default function AdminLayout({
               <Settings size={20} className="text-gold" />
               <span className="font-medium">Settings</span>
             </Link>
-            <button className="w-full flex items-center gap-3 px-4 py-3 text-red-600 rounded-lg hover:bg-red-500/10 transition-colors">
+            <button 
+              onClick={handleLogout}
+              className="w-full flex items-center gap-3 px-4 py-3 text-red-600 rounded-lg hover:bg-red-500/10 transition-colors"
+            >
               <LogOut size={20} />
               <span className="font-medium">Logout</span>
             </button>
@@ -59,9 +73,14 @@ export default function AdminLayout({
           {/* Mobile Header */}
           <header className="md:hidden bg-beige border-b border-gold/20 p-4 flex justify-between items-center">
               <h2 className="text-xl font-heading font-bold text-charcoal">Ara Spa CRM</h2>
-              <button className="p-2 text-charcoal-light hover:text-charcoal">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-              </button>
+              <div className="flex items-center gap-2">
+                <button 
+                  onClick={handleLogout}
+                  className="p-2 text-red-600 hover:bg-red-500/10 rounded-lg transition-colors"
+                >
+                  <LogOut size={20} />
+                </button>
+              </div>
           </header>
           
           <div className="p-8">

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Plus, Filter, Edit3, Search } from 'lucide-react';
+import { Plus, Filter, Edit3, Search, LogOut } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import { Modal } from '@/components/ui/Modal';
 import { AuthGuard } from '@/components/ui/AuthGuard';
@@ -11,6 +12,12 @@ export default function AppointmentsStandalonePage() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    router.push('/login');
+  };
 
   // Edit Status Modal State
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -150,6 +157,13 @@ export default function AppointmentsStandalonePage() {
           <p className="text-charcoal-light mt-1 font-sans">Manage all spa bookings and requests from the website.</p>
         </div>
         <div className="flex items-center gap-3 w-full sm:w-auto">
+          <button 
+            onClick={handleLogout}
+            className="flex items-center justify-center gap-2 px-4 py-2 bg-red-50 text-red-600 border border-red-200 rounded-lg text-sm font-medium hover:bg-red-100 transition-colors w-full sm:w-auto font-sans shadow-sm"
+          >
+            <LogOut size={16} />
+            Logout
+          </button>
           <button className="flex items-center justify-center gap-2 px-4 py-2 bg-beige border border-gold/30 rounded-lg text-sm font-medium text-charcoal hover:bg-gold/10 transition-colors w-full sm:w-auto font-sans cursor-not-allowed opacity-50" title="Coming soon">
             <Filter size={16} />
             Filter
