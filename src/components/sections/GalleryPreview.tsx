@@ -3,16 +3,20 @@
 import React, { useRef } from "react";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 
-export function GalleryPreview() {
+export function GalleryPreview({ images: propImages }: { images?: string[] }) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const images = [
+  
+  const defaultImages = [
     "/images/A-Luxury-Spa-in-Hyderabad-for-Deep-Relaxation.png",
+    "/gallery/spa-interior-8.jpeg",
     "/images/Aroma-Therapy.png",
     "/images/Balinese-Therapy.png",
     "/images/Deep-Tissue-Massage.png",
     "/images/Thai-Therapy.png",
     "/images/Swedish-massage.png"
   ];
+  
+  const images = propImages && propImages.length > 0 ? propImages : defaultImages;
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {

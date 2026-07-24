@@ -51,12 +51,13 @@ export function ContactPreview() {
           </div>
 
           {/* Rounded Map */}
-          <div className="w-full lg:w-7/12 flex items-center justify-center">
-            <div className="w-full h-full min-h-[400px] rounded-[24px] overflow-hidden shadow-xl border-4 border-white bg-white">
+          <div className="w-full lg:w-7/12 flex items-stretch">
+            <div className="w-full h-[350px] md:h-[450px] lg:h-auto lg:min-h-[100%] rounded-[24px] overflow-hidden shadow-xl border-4 border-white bg-white flex">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5033098838217!2d78.402298!3d17.4356082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91528c4653ef%3A0x3a1779b1f643662e!2sAra%20Spa!5e0!3m2!1sen!2sin!4v1783422007588!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
+                className="w-full h-full min-h-[350px] md:min-h-[450px] lg:min-h-full flex-1"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"

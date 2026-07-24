@@ -15,6 +15,11 @@ function getGalleryImages() {
     const files = fs.readdirSync(galleryDir);
     return files
       .filter(file => /\.(jpg|jpeg|png|webp)$/i.test(file))
+      .sort((a, b) => {
+        const numA = parseInt(a.match(/\d+/) ? (a.match(/\d+/) as RegExpMatchArray)[0] : '0');
+        const numB = parseInt(b.match(/\d+/) ? (b.match(/\d+/) as RegExpMatchArray)[0] : '0');
+        return numA - numB;
+      })
       .map(file => `/gallery/${file}`);
   } catch (error) {
     console.error('Error reading gallery directory:', error);

@@ -7,7 +7,6 @@ export function Marquee() {
     "PREMIUM OILS",
     "LUXURY AMBIENCE",
     "COUPLE ROOMS AVAILABLE",
-    "FREE PARKING",
   ];
 
   // Repeat the words to ensure a smooth continuous loop

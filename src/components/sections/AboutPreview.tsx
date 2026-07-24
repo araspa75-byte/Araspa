@@ -14,7 +14,7 @@ export function AboutPreview() {
             <ScrollReveal direction="right" delay={0.2} className="relative aspect-[4/5] w-full max-w-md mx-auto">
               <div className="absolute inset-0 bg-gold/20 -translate-x-6 translate-y-6 rounded-t-full rounded-b-md" />
               <img
-                src="/images/A-Luxury-Spa-in-Hyderabad-for-Deep-Relaxation.png"
+                src="/gallery/spa-interior-8.jpeg"
                 alt="ARA Spa Interior - Luxury spa in Jubilee Hills"
                 className="absolute inset-0 w-full h-full object-cover rounded-t-full rounded-b-md shadow-2xl"
               />

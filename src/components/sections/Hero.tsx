@@ -24,17 +24,25 @@ export function Hero() {
   };
 
   return (
-    <section className="relative w-full pt-28 pb-12 px-4 md:px-8 flex items-center justify-center bg-cream min-h-[90vh]">
+    <section className="relative w-full pt-0 pb-6 md:pb-12 px-4 md:px-8 flex items-center justify-center bg-cream">
       <div className="w-full max-w-[1400px] h-[75vh] min-h-[500px] relative rounded-[20px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.1)] flex items-center justify-center">
         
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-charcoal/50 z-10" />
+          {/* Mobile Image */}
           <img
-            src="/images/Proactive-Therapeutic-Care.png"
+            src="/gallery/spa-interior-8.jpeg"
             alt="ARA Spa - Luxury spa in Jubilee Hills and Madhapur"
             loading="eager"
-            className="w-full h-full object-cover object-center scale-105 animate-slow-zoom opacity-80"
+            className="w-full h-full object-cover object-center md:hidden scale-105 animate-slow-zoom opacity-80"
+          />
+          {/* Desktop Image */}
+          <img
+            src="/gallery/spa-interior-1.jpeg"
+            alt="ARA Spa - Luxury spa in Jubilee Hills and Madhapur"
+            loading="eager"
+            className="w-full h-full object-cover object-center hidden md:block scale-105 animate-slow-zoom opacity-80"
           />
         </div>
 
@@ -46,16 +54,16 @@ export function Hero() {
             animate="visible"
             className="flex flex-col items-center"
           >
-            <motion.div variants={itemVariants} className="inline-block bg-white/95 text-charcoal font-bold tracking-[2.5px] uppercase rounded-full px-6 py-2.5 text-xs mb-8 shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-black/5">
-              Premium Wellness Retreat
+            <motion.div variants={itemVariants} className="mb-8 flex justify-center">
+              <img src="/images/Araspa-LOGO.png" alt="ARA Spa Logo" className="h-24 md:h-32 object-contain drop-shadow-md" />
             </motion.div>
             
-            <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 drop-shadow-lg leading-[1.1]">
+            <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-7xl font-heading text-charcoal uppercase mb-6 leading-[1.1]">
               The Best Spa in <br />
-              <span className="italic font-light">Jubilee Hills.</span>
+              Jubilee Hills
             </motion.h1>
             
-            <motion.p variants={itemVariants} className="text-base md:text-lg text-cream/95 font-sans max-w-xl mx-auto mb-10 drop-shadow-md">
+            <motion.p variants={itemVariants} className="text-base md:text-lg text-gold font-sans font-medium max-w-xl mx-auto mb-10">
               Conveniently located in Jubilee Hills, ARA Spa is the preferred luxury wellness retreat for residents and corporate professionals across Madhapur and Hitech City.
             </motion.p>
             
@@ -74,15 +82,6 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div 
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-white flex flex-col items-center"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <span className="text-[10px] uppercase tracking-[0.2em] mb-2 opacity-80 font-medium">Scroll</span>
-          <div className="w-[1px] h-10 bg-gradient-to-b from-white/80 to-transparent" />
-        </motion.div>
       </div>
     </section>
   );

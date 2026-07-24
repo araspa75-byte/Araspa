@@ -14,7 +14,21 @@ export const metadata: Metadata = {
   description: 'Experience the best massage center in Madhapur and Jubilee Hills. Luxury couple packages near Hitech City. Call +91 77889 93406 to book your retreat today.',
 };
 
+function getGalleryImages() {
+  return [
+    "/gallery/spa-interior-11.jpeg",
+    "/gallery/spa-interior-13.jpeg",
+    "/gallery/spa-interior-10.jpeg",
+    "/gallery/spa-interior-4.jpeg",
+    "/gallery/spa-interior-7.jpeg",
+    "/gallery/spa-interior-5.jpeg",
+    "/gallery/spa-interior-12.jpeg"
+  ];
+}
+
 export default function Home() {
+  const galleryImages = getGalleryImages();
+  
   return (
     <>
       <Hero />
@@ -23,7 +37,7 @@ export default function Home() {
       <AboutPreview />
       <ServicesPreview />
       <TestimonialsPreview />
-      <GalleryPreview />
+      <GalleryPreview images={galleryImages} />
       <BookingSection />
       <ContactPreview />
     </>

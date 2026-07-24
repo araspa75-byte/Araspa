@@ -69,7 +69,7 @@ export function Footer() {
             <h4 className="text-xl font-heading font-medium mb-6 text-white">Working Hours</h4>
             <ul className="space-y-4 font-sans text-cream-fixed/70">
               <li className="flex items-center justify-between border-b border-cream-fixed/10 pb-2">
-                <span className="flex items-center"><Clock size={16} className="mr-2 text-gold"/> Sun - Sat</span>
+                <span className="flex items-center"><Clock size={16} className="mr-2 text-gold"/> Open all 7 days</span>
                 <span>9:30 AM - 10:00 PM</span>
               </li>
               <li className="flex items-center justify-between pb-2">
