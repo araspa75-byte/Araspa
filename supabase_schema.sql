@@ -56,6 +56,8 @@ ALTER TABLE public.contact_submissions ENABLE ROW LEVEL SECURITY;
 -- Security Policies for contact_submissions
 CREATE POLICY "Allow public read access" ON public.contact_submissions FOR SELECT USING (true);
 CREATE POLICY "Allow anonymous inserts" ON public.contact_submissions FOR INSERT TO anon WITH CHECK (auth.role() = 'anon');
+CREATE POLICY "Allow authenticated updates" ON public.contact_submissions FOR UPDATE TO authenticated USING (true);
+CREATE POLICY "Allow authenticated inserts" ON public.contact_submissions FOR INSERT TO authenticated WITH CHECK (true);
 
 -- ==========================================
 -- 2. INSERT INITIAL SEED DATA

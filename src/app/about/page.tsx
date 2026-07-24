@@ -17,7 +17,7 @@ export default function AboutPage() {
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
             <p className="text-cream-fixed/80 text-lg max-w-2xl mx-auto font-sans">
-              A spa in Madhapur run by people who actually care whether you feel better when you leave.
+              A spa in Madhapur/Jubilee Hills run by people who actually care whether you feel better when you leave.
             </p>
           </ScrollReveal>
         </div>
@@ -37,7 +37,7 @@ export default function AboutPage() {
                 </ScrollReveal>
                 <ScrollReveal delay={0.3}>
                   <p>
-                    We hired therapists who trained for years — including Thai specialists who learned their craft in Thailand. We sourced organic, cruelty-free oils and skincare that we’d use on ourselves. And we designed rooms that are soundproof, clean, and private enough that you actually forget you’re in the middle of Madhapur.
+                    We hired therapists who trained for years — including Thai specialists who learned their craft in Thailand. We sourced organic, cruelty-free oils and skincare that we’d use on ourselves. And we designed rooms that are soundproof, clean, and private enough that you actually forget you’re in the middle of Madhapur/Jubilee Hills.
                   </p>
                 </ScrollReveal>
                 <ScrollReveal delay={0.4}>

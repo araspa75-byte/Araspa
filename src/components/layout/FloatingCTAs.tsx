@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { MessageCircle, Phone, ArrowUp } from "lucide-react";
+import { MessageCircle, Phone, ArrowUp, Instagram, Facebook } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 export function FloatingCTAs() {
@@ -55,6 +55,26 @@ export function FloatingCTAs() {
         aria-label="Chat on WhatsApp"
       >
         <MessageCircle size={28} />
+      </a>
+
+      <a
+        href="https://www.instagram.com/araspahyd/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-14 h-14 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-all focus:outline-none"
+        aria-label="Follow on Instagram"
+      >
+        <Instagram size={28} />
+      </a>
+
+      <a
+        href="https://www.facebook.com/profile.php?id=61582245003749"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-14 h-14 bg-[#1877F2] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-all focus:outline-none"
+        aria-label="Follow on Facebook"
+      >
+        <Facebook size={28} />
       </a>
     </div>
   );
