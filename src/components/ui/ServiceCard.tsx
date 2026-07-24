@@ -25,7 +25,7 @@ export function ServiceCard({
   return (
     <div
       className={cn(
-        "group flex flex-col bg-cream rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 border border-beige",
+        "group flex flex-col bg-cream rounded-[20px] overflow-hidden shadow-sm hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 border border-beige",
         className
       )}
     >
@@ -34,33 +34,33 @@ export function ServiceCard({
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
           loading="lazy"
         />
       </div>
-      <div className="p-6 md:p-8 flex flex-col flex-grow">
+      <div className="p-5 md:p-6 flex flex-col flex-grow">
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-2xl font-heading font-bold text-charcoal">
+          <h3 className="text-xl md:text-2xl font-heading font-bold text-charcoal">
             {title}
           </h3>
           {duration && (
-            <div className="flex items-center text-gold text-sm font-medium bg-gold/10 px-3 py-1 rounded-full">
-              <Clock className="w-4 h-4 mr-2" />
+            <div className="flex items-center text-gold text-xs font-medium bg-gold/10 px-3 py-1 rounded-full whitespace-nowrap">
+              <Clock className="w-3 h-3 mr-1.5" />
               {duration}
             </div>
           )}
         </div>
-        <p className="text-charcoal-light font-sans mb-8 flex-grow line-clamp-3">
-          {description}
+        <p className="text-charcoal-light text-sm md:text-base font-sans mb-6 flex-grow line-clamp-3">
+          {description.split('Pricing:')[0].trim()}
         </p>
         <div className="flex items-center justify-between mt-auto">
-          <Link href={href} className="flex-grow mr-4">
-            <Button variant="outline" className="w-full">
-              View Details
+          <Link href={href} className="flex-grow mr-3">
+            <Button variant="outline" className="w-full rounded-full border-charcoal/30 hover:bg-charcoal hover:text-white transition-colors text-xs md:text-sm">
+              Read More
             </Button>
           </Link>
-          <Link href="/contact" className="flex-shrink-0">
-            <Button variant="ghost" className="px-2 group/btn">
+          <Link href="/#booking" className="flex-shrink-0">
+            <Button variant="ghost" className="px-2 group/btn rounded-full hover:bg-gold/10">
               <span className="sr-only">Book {title}</span>
               <ArrowRight className="text-gold group-hover/btn:translate-x-1 transition-transform" />
             </Button>

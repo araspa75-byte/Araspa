@@ -26,18 +26,16 @@
     --color-charcoal-fixed: 44 44 44;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      color-scheme: dark;
-      /* Invert backgrounds to dark */
-      --color-cream: 26 26 26;       /* maps to charcoal-dark */
-      --color-beige: 44 44 44;       /* maps to charcoal */
-      
-      /* Invert foregrounds to light */
-      --color-charcoal: 253 251 247; /* maps to cream */
-      --color-charcoal-light: 245 240 230; /* maps to beige */
-      --color-charcoal-dark: 255 255 255; /* pure white */
-    }
+  .dark {
+    color-scheme: dark;
+    /* Invert backgrounds to dark */
+    --color-cream: 26 26 26;       /* maps to charcoal-dark */
+    --color-beige: 44 44 44;       /* maps to charcoal */
+    
+    /* Invert foregrounds to light */
+    --color-charcoal: 253 251 247; /* maps to cream */
+    --color-charcoal-light: 245 240 230; /* maps to beige */
+    --color-charcoal-dark: 255 255 255; /* pure white */
   }
 
   body {

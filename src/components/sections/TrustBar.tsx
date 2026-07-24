@@ -12,13 +12,13 @@ const trustItems = [
 
 export function TrustBar() {
   return (
-    <section className="bg-charcoal-fixed py-8 border-y border-gold/20 relative z-30 -mt-2">
+    <section className="bg-[#f8f9fa] dark:bg-[#1a1a1a] py-5 border-y border-black/5 dark:border-white/5 relative z-30 transition-colors">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12">
           {trustItems.map((item, index) => (
-            <div key={index} className="flex items-center space-x-2 text-cream-fixed/90">
+            <div key={index} className="flex items-center space-x-2 text-charcoal dark:text-cream font-semibold transition-colors">
               <item.icon className="w-5 h-5 text-gold" />
-              <span className="font-sans text-sm md:text-base font-medium tracking-wide">
+              <span className="font-sans text-sm md:text-[15px] tracking-wide">
                 {item.text}
               </span>
             </div>

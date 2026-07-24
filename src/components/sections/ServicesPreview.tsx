@@ -1,13 +1,12 @@
 import React from "react";
 import { SectionHeading } from "../ui/SectionHeading";
 import { ServiceCard } from "../ui/ServiceCard";
-import { Carousel } from "../ui/Carousel";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { supabase } from '@/lib/supabase';
 
-const services = [
+// Fallback services in case Supabase fetch fails
+const fallbackServices = [
   {
-    title: "Aroma",
+    title: "Aroma Therapy",
     description: "Organic essential oils like lavender, eucalyptus, and chamomile — worked into your muscles with slow, deliberate strokes. Great for winding down after a long week. Pricing: 30 Min (₹1200) | 45 Min (₹1500) | 1 Hour (₹2000) | 90 Min (₹2500)",
     image: "/images/Aroma-Therapy.png",
     duration: "30 - 90 min",
@@ -40,63 +39,49 @@ const services = [
     image: "/images/Thai-Therapy.png",
     duration: "30 - 90 min",
     href: "/services/thai-therapy"
+  },
+  {
+    title: "Tantra Therapy",
+    description: "A deeply spiritual and relaxing experience designed to harmonize your body and mind through specialized touch and energy flow techniques.",
+    image: "/images/Tantra.png",
+    duration: "60 - 90 min",
+    href: "/services/tantra"
   }
 ];
 
-export function ServicesPreview() {
-  // Combine services and the "View All" card data
-  const allItems = [
-    ...services.map(s => ({ type: 'service', data: s })),
-    { type: 'view-all' }
-  ];
+export async function ServicesPreview() {
+  // Fetch all services from Supabase
+  const { data: services, error } = await supabase
+    .from('services')
+    .select('*')
+    .order('order_index', { ascending: true });
 
-  // Group into chunks of 3 for the slides
-  const slides = [];
-  for (let i = 0; i < allItems.length; i += 3) {
-    slides.push(allItems.slice(i, i + 3));
-  }
+  const displayServices = (services && services.length > 0) ? services : fallbackServices;
 
   return (
-    <section className="py-24 bg-cream">
+    <section className="py-24 bg-cream transition-colors">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <SectionHeading 
-            title="Our Specialized Therapies" 
-            subtitle="Explore our range of treatments, from Moroccan baths to deep tissue relief."
+            title="Our Services" 
+            subtitle="Explore our complete range of treatments, from deep tissue relief to traditional therapies."
             align="left"
             className="mb-0"
           />
         </div>
 
-        <div className="w-full">
-          <Carousel interval={2000} autoPlay={true}>
-            {slides.map((slideItems, slideIndex) => (
-              <div key={slideIndex} className="w-full px-4 md:px-12 pb-8 h-full">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 h-full">
-                  {slideItems.map((item, itemIndex) => {
-                    if ('data' in item) {
-                      return <ServiceCard key={itemIndex} {...item.data} className="h-full" />;
-                    } else {
-                      return (
-                        <Link key="view-all" href="/services" className="group flex flex-col items-center justify-center bg-cream rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-beige h-full min-h-[400px] p-8 text-center cursor-pointer">
-                          <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-500">
-                            <ArrowRight className="w-10 h-10 text-gold group-hover:text-white transition-colors duration-500" />
-                          </div>
-                          <h3 className="text-3xl font-heading font-bold text-charcoal mb-4">See All 6 Treatments</h3>
-                          <p className="text-charcoal-light font-sans text-lg">
-                            Browse every massage, scrub, and therapy at our massage center in Madhapur — with details on what each one does.
-                          </p>
-                          <div className="mt-8 text-gold uppercase tracking-widest font-semibold text-sm group-hover:underline">
-                            Discover More
-                          </div>
-                        </Link>
-                      );
-                    }
-                  })}
-                </div>
-              </div>
-            ))}
-          </Carousel>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {displayServices.map((service: any, index: number) => (
+            <ServiceCard 
+              key={service.id || index} 
+              title={service.title}
+              description={service.description}
+              image={service.image}
+              duration={service.duration}
+              href={service.href || `/#booking`}
+              className="h-full" 
+            />
+          ))}
         </div>
       </div>
     </section>

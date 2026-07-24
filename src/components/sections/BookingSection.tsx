@@ -4,7 +4,7 @@ import { ContactForm } from "../ui/ContactForm";
 
 export function BookingSection() {
   return (
-    <section className="py-24 bg-beige/30">
+    <section id="booking" className="py-24 bg-beige/30 scroll-mt-24">
       <div className="container mx-auto px-4">
         <SectionHeading 
           title="Couple Massage Packages Hyderabad" 

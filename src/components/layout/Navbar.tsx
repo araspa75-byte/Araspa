@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "../ui/Button";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../ui/Button";
+import { ThemeToggle } from "../ui/ThemeToggle";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -22,6 +23,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,12 +37,10 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b",
-        isScrolled
-          ? "bg-cream/90 backdrop-blur-md border-beige py-4 shadow-sm"
-          : "bg-transparent border-transparent py-6"
-      )}
-    >
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-gold/20 shadow-[0_6px_24px_rgba(0,0,0,0.05)] bg-cream/90 backdrop-blur-xl py-4",
+          !isScrolled && "bg-cream/60"
+        )}
+      >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
         <Link href="/" className="group flex items-center">
           <span className="font-heading text-2xl md:text-3xl font-bold tracking-wider text-charcoal group-hover:text-gold transition-colors duration-300">
@@ -69,20 +69,47 @@ export function Navbar() {
               )} />
             </Link>
           ))}
-          <Link href="/contact">
-            <Button variant="default">Book Now</Button>
+          <ThemeToggle />
+          <Link href="/#booking">
+            <Button variant="default" className="rounded-full px-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5">Book Now</Button>
           </Link>
         </nav>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className="lg:hidden text-charcoal p-2 focus:outline-none"
-          onClick={() => setMobileMenuOpen(true)}
-          aria-label="Open Menu"
-        >
-          <Menu size={28} />
-        </button>
+        {/* Mobile Menu Toggle - Hidden on Home page */}
+        {!isHomePage && (
+          <button
+            className="lg:hidden text-charcoal p-2 focus:outline-none"
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open Menu"
+          >
+            <Menu size={28} />
+          </button>
+        )}
       </div>
+
+      {/* Mobile Wrapped Nav Links for Home Page (Option 2) */}
+      {isHomePage && (
+        <nav className="lg:hidden flex flex-wrap items-center justify-center gap-x-4 gap-y-2 px-4 py-3 border-t border-beige/40 bg-cream/95 backdrop-blur-md text-center">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className={cn(
+                "text-[11px] uppercase tracking-widest font-medium transition-colors py-1 px-2.5 rounded-full border border-beige/60",
+                pathname === link.href ? "text-gold bg-gold/15 border-gold font-semibold" : "text-charcoal bg-cream/50"
+              )}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <ThemeToggle />
+          <Link href="/#booking">
+            <span className="text-[11px] uppercase tracking-widest font-semibold text-white bg-gold py-1 px-3 rounded-full shadow-sm block">
+              Book
+            </span>
+          </Link>
+        </nav>
+      )}
     </header>
 
       {/* Mobile Nav */}
@@ -119,13 +146,13 @@ export function Navbar() {
                 </Link>
               ))}
               <div className="pt-8 w-full max-w-xs flex flex-col gap-4">
-                <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  <Button variant="default" size="lg" className="w-full text-lg">
+                <Link href="/#booking" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="default" size="lg" className="w-full text-lg rounded-full shadow-md">
                     Book Appointment
                   </Button>
                 </Link>
                 <a href="tel:+917788993406">
-                  <Button variant="outline" size="lg" className="w-full text-lg">
+                  <Button variant="outline" size="lg" className="w-full text-lg rounded-full">
                     Call Us
                   </Button>
                 </a>

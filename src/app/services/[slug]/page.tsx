@@ -175,7 +175,7 @@ export default async function ServiceDetail({ params }: Props) {
 
               <div>
                 <h3 className="text-2xl font-heading font-bold text-charcoal mb-6">The Process</h3>
-                <ol className="space-y-4 relative border-l border-gold/30 ml-3 mb-10">
+                <ol className="space-y-4 relative border-l border-gold/30 ml-3">
                   {service.process.map((step, idx) => (
                     <li key={idx} className="pl-6 relative">
                       <div className="absolute w-3 h-3 bg-gold rounded-full -left-[6.5px] top-2" />
@@ -183,17 +183,6 @@ export default async function ServiceDetail({ params }: Props) {
                     </li>
                   ))}
                 </ol>
-
-                <div className="mt-8">
-                  <h3 className="text-2xl font-heading font-bold text-charcoal mb-4">Pricing</h3>
-                  <ul className="list-disc list-inside space-y-2 text-charcoal-light font-sans">
-                    {service.pricing.map((p, idx) => (
-                      <li key={idx}>
-                        <span className="font-medium text-charcoal">{p.time}</span> - {p.price}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             </div>
 

@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { WhyChooseUs } from '@/components/sections/WhyChooseUs';
 import { ScrollReveal } from '@/components/ui/animations/ScrollReveal';
 
 export const metadata: Metadata = {
@@ -60,9 +59,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Values / Why Choose Us */}
-      <WhyChooseUs />
 
       {/* Stats Section */}
       <section className="py-24 bg-cream border-t border-gold/10">

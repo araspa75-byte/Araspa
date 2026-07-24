@@ -45,23 +45,38 @@ const localBusinessSchema = {
   "priceRange": "$$"
 };
 
+import { ThemeProvider } from "@/components/ThemeProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            try {
+              if (localStorage.getItem('spa-theme') === 'dark' || (!('spa-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+              } else {
+                document.documentElement.classList.remove('dark');
+              }
+            } catch (_) {}
+          `
+        }} />
       </head>
       <body className="font-sans antialiased bg-cream text-charcoal flex flex-col min-h-screen">
-        <ConditionalLayout>
-          {children}
-        </ConditionalLayout>
+        <ThemeProvider>
+          <ConditionalLayout>
+            {children}
+          </ConditionalLayout>
+        </ThemeProvider>
       </body>
     </html>
   );

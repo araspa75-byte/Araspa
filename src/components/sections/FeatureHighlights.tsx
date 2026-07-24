@@ -23,7 +23,7 @@ export function FeatureHighlights() {
           {highlights.map((item, index) => (
             <ScrollReveal key={index} delay={0.2 * index}>
               <div className="flex flex-col items-center text-center group cursor-pointer">
-                <div className="w-full h-80 relative rounded-2xl overflow-hidden mb-8 shadow-xl">
+                <div className="w-full h-80 relative rounded-[24px] overflow-hidden mb-8 shadow-xl border border-beige">
                   <Image 
                     src={item.image} 
                     alt={item.title}
