@@ -15,7 +15,7 @@ export function AboutPreview() {
               <div className="absolute inset-0 bg-gold/20 -translate-x-6 translate-y-6 rounded-t-full rounded-b-md" />
               <img
                 src="/gallery/spa-interior-8.jpeg"
-                alt="ARA Spa Interior - Luxury spa in Jubilee Hills"
+                alt="ARA Spa Interior - Luxury spa in Madhapur/Jubilee Hills"
                 className="absolute inset-0 w-full h-full object-cover rounded-t-full rounded-b-md shadow-2xl"
               />
             </ScrollReveal>
@@ -23,7 +23,7 @@ export function AboutPreview() {
           
           <div className="w-full lg:w-1/2 space-y-8">
             <SectionHeading 
-              title="A Luxury Spa in Jubilee Hills" 
+              title="A Luxury Spa in Madhapur/Jubilee Hills" 
               subtitle="No noise. No rush. Just you, a private room, and a therapist who actually listens."
               align="left"
             />
@@ -31,12 +31,12 @@ export function AboutPreview() {
             <div className="space-y-4 text-charcoal-light font-sans text-lg leading-relaxed">
               <ScrollReveal delay={0.4}>
                 <p>
-                  Your search for a premium body massage spa near Hitech City ends here. We offer a quiet escape from the corporate rush of the IT corridor.
+                  Your search for a premium body massage spa ends here. We offer a quiet escape from the corporate rush of the IT corridor.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.5}>
                 <p>
-                  Our soundproof rooms and certified therapists create the perfect environment for deep relaxation. We proudly serve guests from Jubilee Hills, Madhapur, and beyond.
+                  Our soundproof rooms and certified therapists create the perfect environment for deep relaxation. We proudly serve guests from Madhapur/Jubilee Hills, and beyond.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.6}>

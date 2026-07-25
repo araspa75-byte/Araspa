@@ -5,8 +5,8 @@ import { ScrollReveal } from '@/components/ui/animations/ScrollReveal';
 import { supabase } from '@/lib/supabase';
 
 export const metadata: Metadata = {
-  title: 'All Spa Treatments | ARA Spa Madhapur — Massage Center in Hyderabad',
-  description: '12 massage and therapy options at our spa in Madhapur Hyderabad — from deep tissue massage therapy and Swedish massage to traditional Thai massage, Balinese, and couples treatments.',
+  title: 'All Spa Treatments | ARA Spa Madhapur/Jubilee Hills — Massage Center in Hyderabad',
+  description: '12 massage and therapy options at our spa in Madhapur/Jubilee Hills Hyderabad — from deep tissue massage therapy and Swedish massage to traditional Thai massage, Balinese, and couples treatments.',
 };
 
 export const revalidate = 0; // Disable cache so database updates show immediately

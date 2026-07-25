@@ -13,7 +13,7 @@ export function ContactPreview() {
           {/* Dark Premium Info Card */}
           <div className="w-full lg:w-5/12 p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-[#171717] to-[#2d241f] border border-gold/20 rounded-[24px] shadow-2xl text-white">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-3">Visit Our Spa</h2>
-            <p className="text-cream/80 font-sans mb-10 text-sm md:text-base">Conveniently located in Jubilee Hills, serving all of Madhapur. Pick a time that works for you — we're open every day.</p>
+            <p className="text-cream/80 font-sans mb-10 text-sm md:text-base">Conveniently located in Madhapur/Jubilee Hills. Pick a time that works for you — we're open every day.</p>
             
             <div className="space-y-8">
               <div className="flex items-start">
@@ -33,7 +33,7 @@ export function ContactPreview() {
                 </div>
                 <div>
                   <h4 className="text-lg font-heading font-bold text-white mb-1">Visit Us</h4>
-                  <p className="text-white/80 font-sans text-sm">metro piller no 1677, Ara spa, 2nd floor, unit no 212, Aditya Enclave<br/>Jubilee Hills, Hyderabad 500033</p>
+                  <p className="text-white/80 font-sans text-sm">metro piller no 1677, Ara spa, 2nd floor, unit no 212, Aditya Enclave<br/>Madhapur/Jubilee Hills, Hyderabad 500033</p>
                   <a href="https://maps.google.com/?cid=4185948183911949870" target="_blank" rel="noopener" className="text-sm font-medium text-gold hover:underline mt-1 inline-block">Get Directions</a>
                 </div>
               </div>
@@ -62,7 +62,7 @@ export function ContactPreview() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="ARA Spa Location - Luxury Spa in Jubilee Hills"
+                title="ARA Spa Location - Luxury Spa in Madhapur/Jubilee Hills"
               />
             </div>
           </div>

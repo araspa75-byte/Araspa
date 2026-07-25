@@ -3,7 +3,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ScrollReveal } from '@/components/ui/animations/ScrollReveal';
 
 export const metadata: Metadata = {
-  title: 'About ARA Spa | Our Story — Madhapur, Hyderabad',
+  title: 'About ARA Spa | Our Story — Madhapur/Jubilee Hills, Hyderabad',
   description: 'Meet the team behind ARA Spa. Certified therapists, organic products, private rooms — and why thousands of guests in Hyderabad keep coming back.',
 };
 

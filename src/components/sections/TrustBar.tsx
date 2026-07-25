@@ -7,7 +7,7 @@ const trustItems = [
   { icon: ShieldCheck, text: "Top Rated in Hyderabad" },
   { icon: Sparkles, text: "Luxury Private Rooms" },
   { icon: Heart, text: "Couple Friendly" },
-  { icon: Clock, text: "Madhapur · Near Hitech City" },
+  { icon: Clock, text: "Madhapur/Jubilee Hills" },
 ];
 
 export function TrustBar() {

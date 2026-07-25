@@ -10,8 +10,8 @@ import { Marquee } from '@/components/sections/Marquee';
 import { GalleryPreview } from '@/components/sections/GalleryPreview';
 
 export const metadata: Metadata = {
-  title: 'Luxury Spa in Jubilee Hills | Best Spa in Hyderabad',
-  description: 'Experience the best massage center in Madhapur and Jubilee Hills. Luxury couple packages near Hitech City. Call +91 77889 93406 to book your retreat today.',
+  title: 'Luxury Spa in Madhapur/Jubilee Hills | Best Spa in Hyderabad',
+  description: 'Experience the best massage center in Madhapur/Jubilee Hills. Luxury couple packages. Call +91 77889 93406 to book your retreat today.',
 };
 
 export const revalidate = 0;

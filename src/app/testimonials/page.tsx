@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Guest Reviews | ARA Spa Madhapur — Top Rated Spa in Hyderabad',
-  description: 'Read what real guests say about ARA Spa. 5-star Google reviews from people in Hyderabad who found the best spa in Madhapur and keep coming back.',
+  title: 'Guest Reviews | ARA Spa Madhapur/Jubilee Hills — Top Rated Spa in Hyderabad',
+  description: 'Read what real guests say about ARA Spa. 5-star Google reviews from people in Hyderabad who found the best spa in Madhapur/Jubilee Hills and keep coming back.',
 };
 
 export default function TestimonialsPage() {

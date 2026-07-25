@@ -33,14 +33,14 @@ export function Hero() {
           {/* Mobile Image */}
           <img
             src="/gallery/spa-interior-8.jpeg"
-            alt="ARA Spa - Luxury spa in Jubilee Hills and Madhapur"
+            alt="ARA Spa - Luxury spa in Madhapur/Jubilee Hills"
             loading="eager"
             className="w-full h-full object-cover object-center md:hidden scale-105 animate-slow-zoom opacity-80"
           />
           {/* Desktop Image */}
           <img
             src="/gallery/spa-interior-1.jpeg"
-            alt="ARA Spa - Luxury spa in Jubilee Hills and Madhapur"
+            alt="ARA Spa - Luxury spa in Madhapur/Jubilee Hills"
             loading="eager"
             className="w-full h-full object-cover object-center hidden md:block scale-105 animate-slow-zoom opacity-80"
           />
@@ -60,11 +60,11 @@ export function Hero() {
             
             <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-7xl font-heading text-charcoal uppercase mb-6 leading-[1.1]">
               The Best Spa in <br />
-              Jubilee Hills
+              Madhapur/Jubilee Hills
             </motion.h1>
             
             <motion.p variants={itemVariants} className="text-base md:text-lg text-gold font-sans font-medium max-w-xl mx-auto mb-10">
-              Conveniently located in Jubilee Hills, ARA Spa is the preferred luxury wellness retreat for residents and corporate professionals across Madhapur and Hitech City.
+              Conveniently located in Madhapur/Jubilee Hills, ARA Spa is the preferred luxury wellness retreat for residents and corporate professionals.
             </motion.p>
             
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">

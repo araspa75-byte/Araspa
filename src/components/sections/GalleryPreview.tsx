@@ -51,7 +51,7 @@ export function GalleryPreview({ images: propImages }: { images?: string[] }) {
       <div className="container mx-auto px-4 md:px-8 mb-10 flex justify-between items-end">
         <div>
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-charcoal mb-2">Our Spa Environment</h2>
-          <p className="text-charcoal-light font-sans text-sm md:text-base">Take a look inside our premium facilities in Jubilee Hills.</p>
+          <p className="text-charcoal-light font-sans text-sm md:text-base">Take a look inside our premium facilities in Madhapur/Jubilee Hills.</p>
         </div>
         <div className="hidden md:flex gap-3">
           <button onClick={() => scroll('left')} className="w-12 h-12 rounded-full border border-beige dark:border-white/10 bg-white dark:bg-[#1a1a1a] flex items-center justify-center hover:bg-gold/10 dark:hover:bg-gold/20 transition-colors shadow-sm group">

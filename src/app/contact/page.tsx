@@ -5,8 +5,8 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ScrollReveal } from '@/components/ui/animations/ScrollReveal';
 
 export const metadata: Metadata = {
-  title: 'Contact & Book | ARA Spa — Massage Center in Madhapur, Hyderabad',
-  description: 'Book your appointment at ARA Spa. Call, WhatsApp, or fill out the form. A luxury spa near Hitech City in Madhapur, Hyderabad — open 9:30 AM to 10 PM, every day.',
+  title: 'Contact & Book | ARA Spa — Massage Center in Madhapur/Jubilee Hills, Hyderabad',
+  description: 'Book your appointment at ARA Spa. Call, WhatsApp, or fill out the form. A luxury spa in Madhapur/Jubilee Hills, Hyderabad — open 9:30 AM to 10 PM, every day.',
 };
 
 export default function ContactPage() {

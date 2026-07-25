@@ -15,7 +15,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-cream-fixed/70 font-sans leading-relaxed">
-              Experience the best massage center in Madhapur and Jubilee Hills. Luxury couple packages near Hitech City. Deep tissue, traditional Thai massage, and Swedish stress relief with certified therapists. Open 7 days.
+              Experience the best massage center in Madhapur/Jubilee Hills. Luxury couple packages. Deep tissue, traditional Thai massage, and Swedish stress relief with certified therapists. Open 7 days.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 rounded-full bg-cream-fixed/10 flex items-center justify-center hover:bg-gold transition-colors duration-300">
@@ -51,7 +51,7 @@ export function Footer() {
             <ul className="space-y-4 font-sans text-cream-fixed/70">
               <li className="flex items-start">
                 <MapPin size={20} className="mr-3 mt-1 flex-shrink-0 text-gold" />
-                <span>metro piller no 1677, Ara spa, 2nd floor, unit no 212, Aditya Enclave<br/>Jubilee Hills, Hyderabad, Telangana 500033<br/><span className="text-cream-fixed/50 text-xs">Serving Jubilee Hills, Madhapur & Hitech City</span></span>
+                <span>metro piller no 1677, Ara spa, 2nd floor, unit no 212, Aditya Enclave<br/>Madhapur/Jubilee Hills, Hyderabad, Telangana 500033<br/><span className="text-cream-fixed/50 text-xs">Serving Madhapur/Jubilee Hills</span></span>
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="mr-3 flex-shrink-0 text-gold" />

@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
-  title: "ARA Spa Madhapur | Best Spa in Hyderabad — Luxury Massage Near Hitech City",
-  description: "ARA Spa is a top rated spa in Hyderabad, located in Madhapur near Hitech City. Deep tissue massage therapy, traditional Thai massage, Swedish massage for stress relief, and couples treatments. Certified therapists, private rooms. Open 7 days.",
-  keywords: "best spa in madhapur, luxury spa near hitech city, best spa in hyderabad, massage center in madhapur, full body massage in hyderabad, spa in madhapur hyderabad, top rated spa in hyderabad, premium wellness center hyderabad, body massage in madhapur, best couple massage in madhapur, luxury massage center in hyderabad",
+  title: "ARA Spa Madhapur/Jubilee Hills | Best Spa in Hyderabad",
+  description: "ARA Spa is a top rated spa in Hyderabad, located in Madhapur/Jubilee Hills. Deep tissue massage therapy, traditional Thai massage, Swedish massage for stress relief, and couples treatments. Certified therapists, private rooms. Open 7 days.",
+  keywords: "best spa in Madhapur/Jubilee Hills, luxury spa, best spa in hyderabad, massage center in Madhapur/Jubilee Hills, full body massage in hyderabad, spa in Madhapur/Jubilee Hills hyderabad, top rated spa in hyderabad, premium wellness center hyderabad, body massage in Madhapur/Jubilee Hills, best couple massage in Madhapur/Jubilee Hills, luxury massage center in hyderabad",
   other: {
     "geo.region": "IN-TG",
     "geo.placename": "Hyderabad",
@@ -19,10 +20,10 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "HealthAndBeautyBusiness",
   "name": "ARA Spa",
-  "description": "Experience the best massage center in Madhapur and Jubilee Hills. Luxury couple packages near Hitech City. Deep tissue, traditional Thai massage, and Swedish stress relief with certified therapists.",
+  "description": "Experience the best massage center in Madhapur/Jubilee Hills. Luxury couple packages. Deep tissue, traditional Thai massage, and Swedish stress relief with certified therapists.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "metro piller no 1677, Ara spa, 2nd floor, unit no 212, Aditya Enclave, Jubilee Hills",
+    "streetAddress": "metro piller no 1677, Ara spa, 2nd floor, unit no 212, Aditya Enclave, Madhapur/Jubilee Hills",
     "addressLocality": "Hyderabad",
     "addressRegion": "Telangana",
     "postalCode": "500033",
@@ -64,6 +65,7 @@ export default function RootLayout({
           {children}
         </ConditionalLayout>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

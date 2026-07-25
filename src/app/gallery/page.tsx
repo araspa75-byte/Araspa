@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { ScrollReveal } from '@/components/ui/animations/ScrollReveal';
 
 export const metadata: Metadata = {
-  title: 'Gallery | ARA Spa Madhapur — See Our Luxury Spa',
-  description: 'Photos of ARA Spa’s private treatment rooms, interiors, and facilities in Madhapur, Hyderabad — near Hitech City.',
+  title: 'Gallery | ARA Spa Madhapur/Jubilee Hills — See Our Luxury Spa',
+  description: 'Photos of ARA Spa’s private treatment rooms, interiors, and facilities in Madhapur/Jubilee Hills, Hyderabad.',
 };
 
 import fs from 'fs';
