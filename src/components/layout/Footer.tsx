@@ -51,7 +51,7 @@ export function Footer() {
             <ul className="space-y-4 font-sans text-cream-fixed/70">
               <li className="flex items-start">
                 <MapPin size={20} className="mr-3 mt-1 flex-shrink-0 text-gold" />
-                <span>metro piller no 1677, Ara spa, 2nd floor, unit no 212, Aditya Enclave<br/>Madhapur/Jubilee Hills, Hyderabad, Telangana 500033<br/><span className="text-cream-fixed/50 text-xs">Serving Madhapur/Jubilee Hills</span></span>
+                <span>metro piller no 1677, Ara spa, 2nd floor, unit no 212, Aditya Enclave<br/>Jubilee Hills, Hyderabad, Telangana 500033</span>
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="mr-3 flex-shrink-0 text-gold" />

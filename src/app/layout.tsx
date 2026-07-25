@@ -5,14 +5,19 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
-  title: "ARA Spa Madhapur/Jubilee Hills | Best Spa in Hyderabad",
-  description: "ARA Spa is a top rated spa in Hyderabad, located in Madhapur/Jubilee Hills. Deep tissue massage therapy, traditional Thai massage, Swedish massage for stress relief, and couples treatments. Certified therapists, private rooms. Open 7 days.",
+  title: "Luxury Spa & Relaxation in Hyderabad | ARA Spa",
+  description: "ARA Spa is a top-rated spa in Madhapur/Jubilee Hills. Deep tissue, traditional Thai, and couples massage. Open 7 days. Call/WhatsApp: +91 77889 93406",
   keywords: "best spa in Madhapur/Jubilee Hills, luxury spa, best spa in hyderabad, massage center in Madhapur/Jubilee Hills, full body massage in hyderabad, spa in Madhapur/Jubilee Hills hyderabad, top rated spa in hyderabad, premium wellness center hyderabad, body massage in Madhapur/Jubilee Hills, best couple massage in Madhapur/Jubilee Hills, luxury massage center in hyderabad",
   other: {
     "geo.region": "IN-TG",
     "geo.placename": "Hyderabad",
     "geo.position": "17.4326;78.4071",
     "ICBM": "17.4326, 78.4071"
+  },
+  icons: {
+    icon: "/images/Araspa-LOGO.png",
+    shortcut: "/images/Araspa-LOGO.png",
+    apple: "/images/Araspa-LOGO.png",
   }
 };
 

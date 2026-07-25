@@ -59,12 +59,12 @@ export function Hero() {
             </motion.div>
             
             <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-7xl font-heading text-charcoal uppercase mb-6 leading-[1.1]">
-              The Best Spa in <br />
-              Madhapur/Jubilee Hills
+              The Best Place in <br />
+              Jubilee Hills
             </motion.h1>
             
             <motion.p variants={itemVariants} className="text-base md:text-lg text-gold font-sans font-medium max-w-xl mx-auto mb-10">
-              Conveniently located in Madhapur/Jubilee Hills, ARA Spa is the preferred luxury wellness retreat for residents and corporate professionals.
+              Conveniently located in Jubilee Hills, ARA Spa is the preferred luxury wellness retreat for residents and corporate professionals.
             </motion.p>
             
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
