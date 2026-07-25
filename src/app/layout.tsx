@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "ARA Spa Madhapur | Best Spa in Hyderabad — Luxury Massage Near Hitech City",
@@ -62,6 +63,7 @@ export default function RootLayout({
         <ConditionalLayout>
           {children}
         </ConditionalLayout>
+        <SpeedInsights />
       </body>
     </html>
   );
