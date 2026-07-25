@@ -10,6 +10,7 @@ const serviceDetails: Record<string, {
   title: string;
   description: string;
   image: string;
+  altImage?: string;
   duration: string;
   benefits: string[];
   process: string[];
@@ -103,6 +104,7 @@ const serviceDetails: Record<string, {
     title: "Moroccan Bath Massage",
     description: "An invigorating traditional cleansing ritual featuring exfoliating authentic Moroccan black soap, steam, and a full-body purifying scrub followed by a relaxing hydration massage. Leaves your skin radiant and intensely cleansed.",
     image: "/images/services/moroccan-bath-massage.jpeg",
+    altImage: "/images/services/moroccan-bath-massage-alt.png",
     duration: "60 - 120 min",
     benefits: ["Deeply exfoliates dead skin cells and cleanses pores", "Stimulates healthy circulation and skin turnover", "Relieves muscle tension through purifying warmth", "Leaves whole-body skin feeling silky and luminous"],
     process: ["Gentle steam relaxation to open pores and soften skin", "Application of authentic mineral-rich Moroccan black soap", "Full-body exfoliation using a traditional kessa exfoliating glove", "Nourishing oil finish and relaxation massage"],
@@ -212,7 +214,7 @@ export default async function ServiceDetail({ params }: Props) {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-charcoal-fixed/60 z-10 pointer-events-none" />
           <ImageCarousel
-            images={[service.image, service.image.replace('.jpeg', '-alt.jpeg')]}
+            images={[service.image, service.altImage || service.image.replace('.jpeg', '-alt.jpeg')]}
             alt={service.title}
           />
         </div>

@@ -33,7 +33,7 @@ export function ServiceCard({
       <div className="relative w-full aspect-[4/3] overflow-hidden">
         <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
         <ImageCarousel 
-          images={[image, image.replace('.jpeg', '-alt.jpeg')]} 
+          images={image.startsWith('/') ? [image, image.replace('.jpeg', '-alt.jpeg')] : [image]} 
           alt={title} 
         />
       </div>

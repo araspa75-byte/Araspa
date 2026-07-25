@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import { cn } from "./Button";
 
 interface ImageCarouselProps {
@@ -49,15 +50,16 @@ export function ImageCarousel({ images, alt, className, interval = 3000 }: Image
       onMouseLeave={() => setIsHovered(false)}
     >
       {images.map((img, idx) => (
-        <img
+        <Image
           key={img}
           src={img}
           alt={`${alt} - view ${idx + 1}`}
+          fill
           className={cn(
-            "absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out group-hover:scale-105",
-            idx === currentIndex ? "opacity-100 z-0" : "opacity-0 z-[-1]"
+            "object-cover transition-opacity duration-1000 ease-in-out group-hover:scale-105",
+            idx === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
           )}
-          loading={idx === 0 ? "eager" : "lazy"}
+          priority={idx === 0}
         />
       ))}
       
