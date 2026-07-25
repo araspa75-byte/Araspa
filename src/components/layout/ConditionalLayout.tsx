@@ -23,7 +23,7 @@ export function ConditionalLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar />
-      <main className="flex-grow pt-[88px] md:pt-[104px]">
+      <main className={`flex-grow ${pathname === '/' ? 'pt-[132px] lg:pt-[104px]' : 'pt-[96px] md:pt-[104px]'}`}>
         {children}
       </main>
       <Footer />

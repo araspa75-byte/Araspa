@@ -12,6 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'deep-tissue-massage',
     'swedish-massage',
     'tantra',
+    'moroccan-bath-massage',
+    'body-scrubbing-massage',
+    'four-hands-massage',
+    'hot-stone-massage',
+    'couple-massage',
+    'signature-massage',
   ];
 
   const serviceUrls = services.map((slug) => ({

@@ -142,6 +142,12 @@ export function ContactForm() {
             <option value="deep-tissue-massage">Deep Tissue</option>
             <option value="swedish-massage">Swedish Therapy</option>
             <option value="tantra">Tantra</option>
+            <option value="moroccan-bath-massage">Moroccan Bath Massage</option>
+            <option value="body-scrubbing-massage">Body Scrubbing Massage</option>
+            <option value="four-hands-massage">Four Hands Massage</option>
+            <option value="hot-stone-massage">Hot Stone Massage</option>
+            <option value="couple-massage">Couple Massage</option>
+            <option value="signature-massage">Signature Massage</option>
             <option value="other">Other / Not Sure</option>
           </select>
         </div>

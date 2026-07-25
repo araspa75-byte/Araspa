@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./Button";
 import { ArrowRight, Clock } from "lucide-react";
+import { ImageCarousel } from "./ImageCarousel";
 
 interface ServiceCardProps {
   title: string;
@@ -30,12 +31,10 @@ export function ServiceCard({
       )}
     >
       <div className="relative w-full aspect-[4/3] overflow-hidden">
-        <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-          loading="lazy"
+        <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
+        <ImageCarousel 
+          images={[image, image.replace('.jpeg', '-alt.jpeg')]} 
+          alt={title} 
         />
       </div>
       <div className="p-5 md:p-6 flex flex-col flex-grow">

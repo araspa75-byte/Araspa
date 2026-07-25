@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   description: '12 massage and therapy options at our spa in Madhapur Hyderabad — from deep tissue massage therapy and Swedish massage to traditional Thai massage, Balinese, and couples treatments.',
 };
 
-export const revalidate = 60; // Revalidate cache every 60 seconds
+export const revalidate = 0; // Disable cache so database updates show immediately
+export const dynamic = 'force-dynamic';
 
 export default async function ServicesPage() {
   // Fetch services from Supabase

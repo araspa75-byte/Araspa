@@ -54,6 +54,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 135px;
 }
 
 /* Remove default focus outline and replace with elegant ring */

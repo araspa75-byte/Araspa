@@ -21,6 +21,7 @@ CREATE TABLE public.services (
 
 ALTER TABLE public.services ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Allow public read access to services" ON public.services FOR SELECT TO public USING (true);
+CREATE POLICY "Allow write access to services" ON public.services FOR ALL USING (true) WITH CHECK (true);
 
 -- Create the `packages` table
 CREATE TABLE public.packages (
@@ -37,6 +38,7 @@ CREATE TABLE public.packages (
 
 ALTER TABLE public.packages ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Allow public read access to packages" ON public.packages FOR SELECT TO public USING (true);
+CREATE POLICY "Allow write access to packages" ON public.packages FOR ALL USING (true) WITH CHECK (true);
 
 -- Create the `contact_submissions` table
 CREATE TABLE public.contact_submissions (
@@ -68,7 +70,7 @@ INSERT INTO public.services (title, description, image, duration, href, order_in
 (
   'Aroma', 
   'Organic essential oils like lavender, eucalyptus, and chamomile — worked into your muscles with slow, deliberate strokes. Great for winding down after a long week. Pricing: 30 Min (₹1200) | 45 Min (₹1500) | 1 Hour (₹2000) | 90 Min (₹2500)',
-  '/images/Aroma-Therapy.png',
+  '/images/services/aroma-therapy.jpeg',
   '30 - 90 min',
   '/services/aroma-therapy',
   1
@@ -76,7 +78,7 @@ INSERT INTO public.services (title, description, image, duration, href, order_in
 (
   'Balinese Therapy',
   'An Indonesian technique that mixes gentle stretching with acupressure and warm aromatherapy oils. Loosens you up without the deep pressure. Pricing: 30 Min (₹1500) | 45 Min (₹1800) | 1 Hour (₹2000) | 90 Min (₹2500)',
-  '/images/Balinese-Therapy.png',
+  '/images/services/balinese-therapy.jpeg',
   '30 - 90 min',
   '/services/balinese-therapy',
   2
@@ -84,7 +86,7 @@ INSERT INTO public.services (title, description, image, duration, href, order_in
 (
   'Thai Therapy',
   'Assisted yoga-like stretches, firm acupressure, and rhythmic compressions. You don''t just feel relaxed afterward — you feel taller and looser. Pricing: 30 Min (₹2000) | 45 Min (₹2500) | 1 Hour (₹3000) | 90 Min (₹3500)',
-  '/images/Thai-Therapy.png',
+  '/images/services/thai-therapy.jpeg',
   '30 - 90 min',
   '/services/thai-therapy',
   3
@@ -92,7 +94,7 @@ INSERT INTO public.services (title, description, image, duration, href, order_in
 (
   'Deep Tissue',
   'Firm, targeted pressure into your deepest muscle layers. Built for stiff shoulders, tight lower backs, and pain that won''t quit. Pricing: 30 Min (₹2000) | 45 Min (₹2500) | 1 Hour (₹3200) | 90 Min (₹4500)',
-  '/images/Deep-Tissue-Massage.png',
+  '/images/services/deep-tissue-massage.jpeg',
   '30 - 90 min',
   '/services/deep-tissue-massage',
   4
@@ -100,7 +102,7 @@ INSERT INTO public.services (title, description, image, duration, href, order_in
 (
   'Swedish Therapy',
   'Long, flowing strokes across your whole body. This is the classic — great for first-timers, stress relief, and anyone who just wants to melt into the table. Pricing: 30 Min (₹1500) | 45 Min (₹2000) | 1 Hour (₹2500) | 90 Min (₹3500)',
-  '/images/Swedish-massage.png',
+  '/images/services/swedish-massage.jpeg',
   '30 - 90 min',
   '/services/swedish-massage',
   5
@@ -108,10 +110,58 @@ INSERT INTO public.services (title, description, image, duration, href, order_in
 (
   'Tantra',
   'A slow, intentional practice focused on breath and energy. Designed to quiet a racing mind and bring your whole body into a deep state of calm. Pricing: 30 Min (₹1800) | 45 Min (₹2200) | 1 Hour (₹2700) | 90 Min (₹3500)',
-  '/images/Tantra.png',
+  '/images/services/tantra-therapy.jpeg',
   '30 - 90 min',
   '/services/tantra',
   6
+),
+(
+  'Moroccan Bath Massage',
+  'An invigorating traditional cleansing ritual featuring exfoliating authentic Moroccan black soap, steam, and a full-body purifying scrub followed by a relaxing hydration massage. Leaves your skin radiant and intensely cleansed. Pricing: 1 Hour (₹3000) | 90 Min (₹4000) | 2 Hours (₹5000)',
+  '/images/services/moroccan-bath-massage.jpeg',
+  '60 - 120 min',
+  '/services/moroccan-bath-massage',
+  7
+),
+(
+  'Body Scrubbing Massage',
+  'A rejuvenating combination of full-body organic salt and herbal scrub exfoliation followed by a smooth, relaxing oil massage. Refreshes tired skin, removes dullness, and boosts cellular renewal. Pricing: 45 Min (₹2000) | 1 Hour (₹2500) | 90 Min (₹3500)',
+  '/images/services/body-scrubbing-massage.jpeg',
+  '45 - 90 min',
+  '/services/body-scrubbing-massage',
+  8
+),
+(
+  'Four Hands Massage',
+  'The ultimate relaxation indulgence where two expert therapists work in seamless, choreographed harmony. With four hands gently melting away tension simultaneously, your racing mind totally surrenders to relaxation. Pricing: 1 Hour (₹4500) | 90 Min (₹6000)',
+  '/images/services/four-hands-massage.jpeg',
+  '60 - 90 min',
+  '/services/four-hands-massage',
+  9
+),
+(
+  'Hot Stone Massage',
+  'Smooth, heated volcanic basalt stones are strategically placed on key energy points and glided across tight muscle bands. The gentle heat penetrates deep into muscle cores to melt persistent rigidity and relieve fatigue. Pricing: 1 Hour (₹2800) | 90 Min (₹3800)',
+  '/images/services/hot-stone-massage.jpeg',
+  '60 - 90 min',
+  '/services/hot-stone-massage',
+  10
+),
+(
+  'Couple Massage',
+  'Share a serene, binding wellness journey with your partner or loved one in our luxury couple''s spa suite. Tailored treatments side-by-side with tranquil ambient lighting, aromatic scents, and absolute privacy. Pricing: 1 Hour (₹4500 for two) | 90 Min (₹6500 for two)',
+  '/images/services/couple-massage.jpeg',
+  '60 - 90 min',
+  '/services/couple-massage',
+  11
+),
+(
+  'Signature Massage',
+  'Our crown jewel therapy combining the finest techniques from Thai stretches, Balinese acupressure, Deep Tissue muscle work, and warm Aromatherapy oils into one masterpiece treatment tailored uniquely to your body. Pricing: 1 Hour (₹3500) | 90 Min (₹4500) | 2 Hours (₹5500)',
+  '/images/services/signature-massage.jpeg',
+  '60 - 120 min',
+  '/services/signature-massage',
+  12
 );
 
 -- Insert Packages

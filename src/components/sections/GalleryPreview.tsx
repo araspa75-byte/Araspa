@@ -9,11 +9,11 @@ export function GalleryPreview({ images: propImages }: { images?: string[] }) {
   const defaultImages = [
     "/images/A-Luxury-Spa-in-Hyderabad-for-Deep-Relaxation.png",
     "/gallery/spa-interior-8.jpeg",
-    "/images/Aroma-Therapy.png",
-    "/images/Balinese-Therapy.png",
-    "/images/Deep-Tissue-Massage.png",
-    "/images/Thai-Therapy.png",
-    "/images/Swedish-massage.png"
+    "/images/services/aroma-therapy.jpeg",
+    "/images/services/balinese-therapy.jpeg",
+    "/images/services/deep-tissue-massage.jpeg",
+    "/images/services/thai-therapy.jpeg",
+    "/images/services/swedish-massage.jpeg"
   ];
   
   const images = propImages && propImages.length > 0 ? propImages : defaultImages;
