@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   title: "Luxury Spa & Relaxation in Hyderabad | ARA Spa",
   description: "ARA Spa is a top-rated spa in Madhapur/Jubilee Hills. Deep tissue, traditional Thai, and couples massage. Open 7 days. Call/WhatsApp: +91 77889 93406",
   keywords: "best spa in Madhapur/Jubilee Hills, luxury spa, best spa in hyderabad, massage center in Madhapur/Jubilee Hills, full body massage in hyderabad, spa in Madhapur/Jubilee Hills hyderabad, top rated spa in hyderabad, premium wellness center hyderabad, body massage in Madhapur/Jubilee Hills, best couple massage in Madhapur/Jubilee Hills, luxury massage center in hyderabad",
+  metadataBase: new URL("https://www.araspa.co.in"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Luxury Spa & Relaxation in Hyderabad | ARA Spa",
     description: "ARA Spa is a top-rated spa in Madhapur/Jubilee Hills. Deep tissue, traditional Thai, and couples massage. Open 7 days. Call/WhatsApp: +91 77889 93406",
