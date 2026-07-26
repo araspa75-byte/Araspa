@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Luxury Spa & Relaxation in Hyderabad | ARA Spa",
     description: "ARA Spa is a top-rated spa in Madhapur/Jubilee Hills. Deep tissue, traditional Thai, and couples massage. Open 7 days. Call/WhatsApp: +91 77889 93406",
-    url: "https://araspa.co.in",
+    url: "https://www.araspa.co.in",
     siteName: "ARA Spa",
     locale: "en_IN",
     type: "website",
@@ -28,7 +28,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "ARA Spa",
-  "url": "https://araspa.co.in/"
+  "url": "https://www.araspa.co.in/"
 };
 
 const localBusinessSchema = {
