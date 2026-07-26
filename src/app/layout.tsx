@@ -8,17 +8,27 @@ export const metadata: Metadata = {
   title: "Luxury Spa & Relaxation in Hyderabad | ARA Spa",
   description: "ARA Spa is a top-rated spa in Madhapur/Jubilee Hills. Deep tissue, traditional Thai, and couples massage. Open 7 days. Call/WhatsApp: +91 77889 93406",
   keywords: "best spa in Madhapur/Jubilee Hills, luxury spa, best spa in hyderabad, massage center in Madhapur/Jubilee Hills, full body massage in hyderabad, spa in Madhapur/Jubilee Hills hyderabad, top rated spa in hyderabad, premium wellness center hyderabad, body massage in Madhapur/Jubilee Hills, best couple massage in Madhapur/Jubilee Hills, luxury massage center in hyderabad",
+  openGraph: {
+    title: "Luxury Spa & Relaxation in Hyderabad | ARA Spa",
+    description: "ARA Spa is a top-rated spa in Madhapur/Jubilee Hills. Deep tissue, traditional Thai, and couples massage. Open 7 days. Call/WhatsApp: +91 77889 93406",
+    url: "https://araspa.co.in",
+    siteName: "ARA Spa",
+    locale: "en_IN",
+    type: "website",
+  },
   other: {
     "geo.region": "IN-TG",
     "geo.placename": "Hyderabad",
     "geo.position": "17.4326;78.4071",
     "ICBM": "17.4326, 78.4071"
-  },
-  icons: {
-    icon: "/images/Araspa-LOGO.png",
-    shortcut: "/images/Araspa-LOGO.png",
-    apple: "/images/Araspa-LOGO.png",
   }
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ARA Spa",
+  "url": "https://araspa.co.in/"
 };
 
 const localBusinessSchema = {
@@ -60,6 +70,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
