@@ -40,7 +40,7 @@ export function ScrollReveal({
   const variants = getVariants();
 
   return (
-    <div style={{ position: "relative", width }} className={className}>
+    <div className={`relative ${width === "100%" ? "w-full" : "w-fit"} ${className}`}>
       <motion.div
         variants={variants}
         initial="hidden"
@@ -48,7 +48,8 @@ export function ScrollReveal({
         viewport={{ once: true, margin: "-10%" }}
         transition={{ duration, delay, ease: "easeOut" }}
         {...props}
-        style={{ width: "100%", height: "100%", ...(props.style || {}) }}
+        className="w-full h-full"
+        style={props.style}
       >
         {children}
       </motion.div>

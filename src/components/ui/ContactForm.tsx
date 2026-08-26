@@ -124,7 +124,7 @@ export function ContactForm() {
             type="email" 
             required 
             className="w-full px-4 py-3 bg-cream border border-beige rounded-md focus:outline-none focus:ring-2 focus:ring-gold/50 transition-shadow" 
-            placeholder="jane@example.com"
+            placeholder="your.email.address"
           />
         </div>
         <div className="space-y-2">

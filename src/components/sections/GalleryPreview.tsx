@@ -71,7 +71,6 @@ export function GalleryPreview({ images: propImages }: { images?: string[] }) {
           onMouseUp={onMouseUp}
           onMouseMove={onMouseMove}
           className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-8 scrollbar-hide touch-pan-x cursor-grab active:cursor-grabbing" 
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {images.map((src, index) => (
             <div key={index} className="shrink-0 w-[280px] md:w-[320px] lg:w-[380px] aspect-[4/5] snap-start rounded-[24px] overflow-hidden shadow-lg border border-black/5 bg-charcoal/10 relative group pointer-events-none">
@@ -85,13 +84,6 @@ export function GalleryPreview({ images: propImages }: { images?: string[] }) {
           ))}
         </div>
       </div>
-      
-      {/* Hide scrollbar completely via inline styles for webkit */}
-      <style dangerouslySetInnerHTML={{__html: `
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-      `}} />
     </section>
   );
 }

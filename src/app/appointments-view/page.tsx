@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import { Modal } from '@/components/ui/Modal';
 import { AuthGuard } from '@/components/ui/AuthGuard';
+import toast from 'react-hot-toast';
 
 export default function AppointmentsStandalonePage() {
   const [appointments, setAppointments] = useState<any[]>([]);
@@ -55,6 +56,26 @@ export default function AppointmentsStandalonePage() {
 
   useEffect(() => {
     fetchAppointments();
+
+    const channel = supabase
+      .channel('contact_submissions_changes_appt_view')
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'contact_submissions',
+        },
+        (payload) => {
+          toast.success(`New appointment request from ${payload.new.name || 'a customer'}!`);
+          fetchAppointments();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
 
   const formatDate = (dateString: string) => {

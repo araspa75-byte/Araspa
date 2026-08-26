@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
           </ul>
 
           <p className="mt-12 text-sm">
-            For more information, please contact us at Araspa75@gmail.com.
+            For more information, please contact us at Araspa75<span>&#64;</span>gmail.com.
           </p>
         </div>
       </div>

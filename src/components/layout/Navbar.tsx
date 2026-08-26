@@ -93,7 +93,6 @@ export function Navbar() {
         <div className="lg:hidden border-t border-beige/30 bg-white/95 backdrop-blur-md shadow-sm">
           <nav 
             className="flex items-center gap-x-2 px-4 py-2.5 overflow-x-auto scrollbar-hide"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
           >
             {navLinks.map((link) => (
               <Link
@@ -115,11 +114,6 @@ export function Navbar() {
               </span>
             </Link>
           </nav>
-          <style dangerouslySetInnerHTML={{__html: `
-            .scrollbar-hide::-webkit-scrollbar {
-                display: none;
-            }
-          `}} />
         </div>
       )}
     </header>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { CalendarCheck, DollarSign, Users, TrendingUp } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import toast from 'react-hot-toast';
 
 export default function AdminDashboard() {
   const [metrics, setMetrics] = useState({
@@ -77,6 +78,26 @@ export default function AdminDashboard() {
         setLoading(false);
     }
     fetchMetrics();
+
+    const channel = supabase
+      .channel('contact_submissions_changes_admin')
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'contact_submissions',
+        },
+        (payload) => {
+          toast.success(`New appointment request from ${payload.new.name || 'a customer'}!`);
+          fetchMetrics();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
 
   const formatDate = (dateString: string) => {

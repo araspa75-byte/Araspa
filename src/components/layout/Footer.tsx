@@ -59,7 +59,16 @@ export function Footer() {
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="mr-3 flex-shrink-0 text-gold" />
-                <a href="mailto:Araspa75@gmail.com" className="hover:text-gold transition-colors">Araspa75@gmail.com</a>
+                <a 
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = "mailto:" + "Araspa75" + "@" + "gmail.com";
+                  }}
+                  className="hover:text-gold transition-colors"
+                >
+                  Araspa75<span>&#64;</span>gmail.com
+                </a>
               </li>
             </ul>
           </div>

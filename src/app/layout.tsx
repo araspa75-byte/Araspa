@@ -3,6 +3,7 @@ import "./globals.css";
 import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Luxury Spa & Relaxation in Hyderabad | ARA Spa",
@@ -17,6 +18,14 @@ export const metadata: Metadata = {
     description: "ARA Spa is a top-rated spa in Madhapur/Jubilee Hills. Deep tissue, traditional Thai, and couples massage. Open 7 days. Call/WhatsApp: +91 77889 93406",
     url: "https://www.araspa.co.in",
     siteName: "ARA Spa",
+    images: [
+      {
+        url: "/images/A-Luxury-Spa-in-Hyderabad-for-Deep-Relaxation.png",
+        width: 1200,
+        height: 630,
+        alt: "Luxury Spa & Relaxation in Hyderabad | ARA Spa",
+      }
+    ],
     locale: "en_IN",
     type: "website",
   },
@@ -87,6 +96,7 @@ export default function RootLayout({
         <ConditionalLayout>
           {children}
         </ConditionalLayout>
+        <Toaster position="top-right" />
         <SpeedInsights />
         <Analytics />
       </body>
