@@ -143,8 +143,6 @@ const localBusinessSchema = {
         name: t.name,
         description: t.description,
       },
-      price: t.pricing[0].priceNumber,
-      priceCurrency: "INR",
       position: index + 1,
     })),
   },

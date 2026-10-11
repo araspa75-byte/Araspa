@@ -54,10 +54,10 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white",
           isScrolled
-            ? "bg-ivory/98 backdrop-blur-xl py-3 border-b border-gold/30 shadow-luxury"
-            : "bg-ivory/95 backdrop-blur-md py-4 md:py-5 border-b border-espresso/10"
+            ? "py-3 border-b border-espresso/10 shadow-md"
+            : "py-4 md:py-5 border-b border-espresso/10 shadow-sm"
         )}
       >
         <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
@@ -98,7 +98,7 @@ export function Navbar() {
                     "text-xs uppercase tracking-[0.18em] font-medium transition-colors duration-300 relative py-1 focus-visible:ring-1 focus-visible:ring-gold",
                     isActive
                       ? "text-gold font-semibold"
-                      : "text-espresso/80 hover:text-espresso"
+                      : "text-espresso hover:text-gold"
                   )}
                 >
                   {link.name}
@@ -183,7 +183,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm z-50 bg-ivory shadow-2xl flex flex-col justify-between overflow-y-auto lg:hidden border-l border-gold/20"
+              className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm z-50 bg-white shadow-2xl flex flex-col justify-between overflow-y-auto lg:hidden border-l border-gold/20"
               role="dialog"
               aria-modal="true"
               aria-label="Mobile Navigation Menu"

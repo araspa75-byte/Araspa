@@ -220,7 +220,7 @@ export function ContactForm({ defaultTreatmentSlug }: ContactFormProps) {
               <option value="">Choose a treatment...</option>
               {TREATMENTS.map((t) => (
                 <option key={t.slug} value={t.slug}>
-                  {t.name} ({t.startingPrice})
+                  {t.name} ({t.duration})
                 </option>
               ))}
               <option value="couple-suite">Private Couple Suite Package</option>

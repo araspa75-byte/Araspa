@@ -3,7 +3,6 @@ import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { AboutPreview } from "@/components/sections/AboutPreview";
-import { SanctuaryExperience } from "@/components/sections/SanctuaryExperience";
 import { ServicesPreview } from "@/components/sections/ServicesPreview";
 import { TestimonialsPreview } from "@/components/sections/TestimonialsPreview";
 import { GalleryPreview } from "@/components/sections/GalleryPreview";
@@ -29,7 +28,6 @@ export default function Home() {
       <Marquee />
       <TrustBar />
       <AboutPreview />
-      <SanctuaryExperience />
       <ServicesPreview />
       <TestimonialsPreview />
       <GalleryPreview />

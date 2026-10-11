@@ -41,12 +41,9 @@ export function ServiceCard({ treatment }: ServiceCardProps) {
           )}
         </div>
 
-        {/* Bottom Image Overlay Bar: Starting Price & Duration */}
-        <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between text-xs font-sans text-white z-10">
-          <span className="font-semibold bg-espresso/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-            {treatment.startingPrice}
-          </span>
-          <span className="inline-flex items-center gap-1 bg-espresso/80 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 text-[11px] text-champagne">
+        {/* Bottom Image Overlay Bar: Duration */}
+        <div className="absolute bottom-3 right-3.5 flex items-center text-xs font-sans text-white z-10">
+          <span className="inline-flex items-center gap-1.5 bg-espresso/85 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15 text-[11px] text-champagne shadow-sm">
             <Clock className="w-3 h-3 text-gold" />
             <span>{treatment.duration}</span>
           </span>

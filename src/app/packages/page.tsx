@@ -163,8 +163,8 @@ export default function PackagesPage() {
                     {pkg.description}
                   </p>
 
-                  <div className="text-3xl font-heading font-bold text-espresso mb-6 pb-6 border-b border-espresso/10">
-                    {pkg.price}
+                  <div className="text-xs uppercase tracking-widest font-semibold text-gold mb-6 pb-6 border-b border-espresso/10">
+                    Bespoke Wellness Retreat
                   </div>
 
                   <ul className="space-y-3 mb-8 flex-grow">

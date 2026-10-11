@@ -92,7 +92,7 @@ export function Footer() {
                   >
                     <span>{t.name}</span>
                     <span className="text-[11px] text-taupe group-hover:text-gold">
-                      {t.startingPrice.split(" ")[0]}
+                      {t.duration}
                     </span>
                   </Link>
                 </li>

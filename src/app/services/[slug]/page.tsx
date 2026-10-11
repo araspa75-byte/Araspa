@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${treatment.name} Therapy in Jubilee Hills`,
-    description: `${treatment.description} Starting from ${treatment.startingPrice} (${treatment.duration}). Private acoustic suite, certified therapist at ARA Spa Jubilee Hills.`,
+    description: `${treatment.description} (${treatment.duration}). Private acoustic suite, certified therapist at ARA Spa Jubilee Hills.`,
     alternates: {
       canonical: `/services/${treatment.slug}`,
     },
@@ -99,8 +99,6 @@ export default async function ServiceDetailPage({ params }: Props) {
     ],
     offers: treatment.pricing.map((tier) => ({
       "@type": "Offer",
-      price: tier.priceNumber,
-      priceCurrency: "INR",
       name: `${treatment.name} (${tier.time})`,
       eligibleDuration: tier.time,
       availability: "https://schema.org/InStock",
@@ -140,8 +138,8 @@ export default async function ServiceDetailPage({ params }: Props) {
       a: `${treatment.longDescription} Your therapist will customize pressure according to your preferences.`,
     },
     {
-      q: `How long is the session and what are the rates?`,
-      a: `${treatment.name} durations range from ${treatment.duration}, with verified rates starting at ${treatment.startingPrice}. Consult our pricing breakdown for full duration tiers.`,
+      q: `How long is the ${treatment.name} session?`,
+      a: `${treatment.name} durations range from ${treatment.duration}. Session timings and customizable pressure areas are tailored to your physical recovery needs.`,
     },
     {
       q: `Is advance appointment booking required?`,
@@ -226,7 +224,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             </span>
             <span className="inline-flex items-center gap-1.5 bg-espresso/80 backdrop-blur-md px-4 py-2 rounded-full border border-gold/30">
               <Sparkles className="w-3.5 h-3.5 text-gold" />
-              <span>Starting from {treatment.startingPrice}</span>
+              <span>Private Acoustic Suite</span>
             </span>
           </div>
         </div>
@@ -256,8 +254,8 @@ export default async function ServiceDetailPage({ params }: Props) {
                     <dd className="font-semibold text-espresso text-sm mt-0.5">{treatment.duration}</dd>
                   </div>
                   <div>
-                    <dt className="text-taupe font-medium uppercase tracking-wider">Starting Price</dt>
-                    <dd className="font-semibold text-espresso text-sm mt-0.5">{treatment.startingPrice} (Inclusive of suite amenities)</dd>
+                    <dt className="text-taupe font-medium uppercase tracking-wider">Consultation</dt>
+                    <dd className="font-semibold text-espresso text-sm mt-0.5">Complimentary wellness consultation</dd>
                   </div>
                   <div>
                     <dt className="text-taupe font-medium uppercase tracking-wider">Treatment Setting</dt>
@@ -370,15 +368,15 @@ export default async function ServiceDetailPage({ params }: Props) {
             {/* Right Sticky Column: Verified Pricing Matrix & Quick Booking (5 cols) */}
             <div className="lg:col-span-5 space-y-8">
               
-              {/* Verified Pricing Breakdown Card */}
+              {/* Session Durations Breakdown Card */}
               <div className="bg-linen/80 rounded-[24px] p-6 sm:p-8 border border-gold/30 shadow-luxury">
                 <div className="flex items-center justify-between pb-4 border-b border-espresso/10 mb-6">
                   <div>
                     <span className="text-xs uppercase tracking-widest text-gold font-semibold block">
-                      Verified Rates
+                      Session Timings
                     </span>
                     <h3 className="font-heading text-2xl font-bold text-espresso">
-                      Duration &amp; Pricing
+                      Available Durations
                     </h3>
                   </div>
                   <Clock className="w-5 h-5 text-gold" />
@@ -396,15 +394,15 @@ export default async function ServiceDetailPage({ params }: Props) {
                           {tier.time}
                         </span>
                       </div>
-                      <span className="font-heading text-lg font-bold text-espresso">
-                        {tier.price}
+                      <span className="text-xs font-sans text-taupe font-medium">
+                        Customized Session
                       </span>
                     </div>
                   ))}
                 </div>
 
                 <p className="text-[11px] text-taupe font-sans mt-4 text-center">
-                  * All rates inclusive of private suite amenities and fresh herbal tea.
+                  * All sessions include private suite amenities and fresh herbal tea.
                 </p>
 
                 {/* Direct Action Buttons */}

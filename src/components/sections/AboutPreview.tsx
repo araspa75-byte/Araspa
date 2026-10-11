@@ -12,44 +12,31 @@ export function AboutPreview() {
       {/* Subtle organic background accent */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-20">
+      <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
           
-          {/* Layered Architectural Imagery */}
-          <div className="w-full lg:w-1/2 relative">
-            <div className="relative max-w-md mx-auto lg:max-w-none">
+          {/* Architectural Imagery */}
+          <div className="w-full lg:w-[390px] shrink-0 flex justify-center">
+            <div className="relative w-full max-w-sm sm:max-w-[390px]">
               {/* Main Primary Image */}
-              <ScrollReveal direction="right" delay={0.2} className="relative aspect-[4/5] w-full rounded-[24px] overflow-hidden shadow-luxury-lg border border-espresso/10">
+              <ScrollReveal direction="right" delay={0.2} className="relative aspect-[4/4.6] w-full rounded-[24px] overflow-hidden shadow-luxury border border-espresso/10">
                 <img
                   src="/gallery/spa-interior-8.jpeg"
                   alt="ARA Spa private treatment suite in Jubilee Hills"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-espresso/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-espresso/35 via-transparent to-transparent pointer-events-none" />
+                
+                {/* Decorative Luxury Tag */}
+                <div className="absolute top-5 left-5 bg-ivory/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-gold/30 shadow-sm text-[10px] sm:text-[11px] uppercase tracking-[0.18em] font-medium text-espresso">
+                  Private • Soundproof • Hygienic
+                </div>
               </ScrollReveal>
-
-              {/* Overlapping Secondary Accent Image */}
-              <ScrollReveal
-                direction="up"
-                delay={0.4}
-                className="absolute -bottom-8 -right-4 sm:-right-8 w-1/2 aspect-square rounded-[20px] overflow-hidden shadow-2xl border-4 border-ivory hidden sm:block"
-              >
-                <img
-                  src="/gallery/spa-interior-10.jpeg"
-                  alt="ARA Spa tranquil ambience and private suite"
-                  className="w-full h-full object-cover"
-                />
-              </ScrollReveal>
-
-              {/* Decorative Luxury Tag */}
-              <div className="absolute top-6 left-6 bg-ivory/90 backdrop-blur-md px-4 py-2 rounded-full border border-gold/30 shadow-sm text-[11px] uppercase tracking-[0.2em] font-medium text-espresso">
-                Private • Soundproof • Hygienic
-              </div>
             </div>
           </div>
 
           {/* Editorial Brand Narrative */}
-          <div className="w-full lg:w-1/2 space-y-6">
+          <div className="w-full lg:flex-1 max-w-xl space-y-6">
             <div>
               <span className="text-xs uppercase tracking-[0.25em] text-gold font-semibold block mb-2">
                 Our Sanctuary Story
