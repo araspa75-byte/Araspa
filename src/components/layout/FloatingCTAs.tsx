@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { MessageCircle, Phone, ArrowUp, Instagram, Facebook } from "lucide-react";
+import { MessageCircle, Phone, ArrowUp } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import { BUSINESS_INFO, getWhatsAppUrl } from "@/content/business";
+import { trackPhoneClick, trackWhatsAppClick } from "@/lib/analytics";
 
 export function FloatingCTAs() {
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -11,7 +13,7 @@ export function FloatingCTAs() {
     const handleScroll = () => {
       setShowTopBtn(window.scrollY > 400);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -23,59 +25,53 @@ export function FloatingCTAs() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+    <aside
+      aria-label="Quick contact actions"
+      className="fixed bottom-5 right-4 sm:right-6 z-40 flex items-center gap-2.5 pointer-events-auto"
+    >
+      {/* Scroll to Top */}
       <AnimatePresence>
         {showTopBtn && (
           <motion.button
-            initial={{ opacity: 0, scale: 0.5 }}
+            initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.5 }}
+            exit={{ opacity: 0, scale: 0.8 }}
             onClick={scrollToTop}
-            className="w-12 h-12 bg-charcoal text-cream rounded-full flex items-center justify-center shadow-lg hover:bg-gold transition-colors focus:outline-none"
-            aria-label="Scroll to top"
+            className="w-10 h-10 rounded-full bg-espresso/90 text-ivory border border-gold/30 flex items-center justify-center shadow-luxury hover:bg-charcoal hover:border-gold transition-all duration-300 focus-visible:ring-2 focus-visible:ring-gold"
+            aria-label="Scroll back to top"
           >
-            <ArrowUp size={24} />
+            <ArrowUp size={16} />
           </motion.button>
         )}
       </AnimatePresence>
 
+      {/* Direct Call Pill */}
       <a
-        href="tel:+917788993406"
-        className="w-14 h-14 bg-gold text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 hover:bg-gold-dark transition-all focus:outline-none"
-        aria-label="Call Us"
+        href={`tel:${BUSINESS_INFO.phone}`}
+        onClick={() => trackPhoneClick("floating_pill")}
+        className="h-11 px-3.5 sm:px-4 rounded-full bg-espresso text-ivory border border-gold/40 flex items-center gap-2 shadow-luxury hover:border-gold hover:bg-charcoal hover:-translate-y-0.5 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-gold"
+        aria-label="Call ARA Spa directly"
       >
-        <Phone size={24} />
+        <Phone size={15} className="text-gold" />
+        <span className="text-xs uppercase tracking-wider font-medium hidden sm:inline">
+          Call Now
+        </span>
       </a>
 
+      {/* WhatsApp Floating Action */}
       <a
-        href="https://wa.me/917788993406?text=Hello%2C%20I%20would%20like%20to%20book%20a%20spa%20appointment."
+        href={getWhatsAppUrl()}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-all focus:outline-none"
-        aria-label="Chat on WhatsApp"
+        onClick={() => trackWhatsAppClick("general", "floating_pill")}
+        className="h-11 px-3.5 sm:px-4 rounded-full bg-[#25D366] text-white flex items-center gap-2 shadow-luxury hover:bg-[#20ba59] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-gold"
+        aria-label="Chat with ARA Spa on WhatsApp"
       >
-        <MessageCircle size={28} />
+        <MessageCircle size={18} />
+        <span className="text-xs uppercase tracking-wider font-semibold">
+          WhatsApp
+        </span>
       </a>
-
-      <a
-        href="https://www.instagram.com/araspahyd/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-14 h-14 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-all focus:outline-none"
-        aria-label="Follow on Instagram"
-      >
-        <Instagram size={28} />
-      </a>
-
-      <a
-        href="https://www.facebook.com/profile.php?id=61582245003749"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-14 h-14 bg-[#1877F2] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-all focus:outline-none"
-        aria-label="Follow on Facebook"
-      >
-        <Facebook size={28} />
-      </a>
-    </div>
+    </aside>
   );
 }

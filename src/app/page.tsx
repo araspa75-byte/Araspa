@@ -1,46 +1,38 @@
-import { Metadata } from 'next';
-import { Hero } from '@/components/sections/Hero';
-import { TrustBar } from '@/components/sections/TrustBar';
-import { AboutPreview } from '@/components/sections/AboutPreview';
-import { ServicesPreview } from '@/components/sections/ServicesPreview';
-import { TestimonialsPreview } from '@/components/sections/TestimonialsPreview';
-import { BookingSection } from '@/components/sections/BookingSection';
-import { ContactPreview } from '@/components/sections/ContactPreview';
-import { Marquee } from '@/components/sections/Marquee';
-import { GalleryPreview } from '@/components/sections/GalleryPreview';
+import { Metadata } from "next";
+import { Hero } from "@/components/sections/Hero";
+import { Marquee } from "@/components/sections/Marquee";
+import { TrustBar } from "@/components/sections/TrustBar";
+import { AboutPreview } from "@/components/sections/AboutPreview";
+import { SanctuaryExperience } from "@/components/sections/SanctuaryExperience";
+import { ServicesPreview } from "@/components/sections/ServicesPreview";
+import { TestimonialsPreview } from "@/components/sections/TestimonialsPreview";
+import { GalleryPreview } from "@/components/sections/GalleryPreview";
+import { BookingSection } from "@/components/sections/BookingSection";
+import { ContactPreview } from "@/components/sections/ContactPreview";
+import { BUSINESS_INFO } from "@/content/business";
 
 export const metadata: Metadata = {
-  title: 'Luxury Spa in Madhapur/Jubilee Hills | Best Spa in Hyderabad',
-  description: 'Experience the best massage center in Madhapur/Jubilee Hills. Luxury couple packages. Call +91 77889 93406 to book your retreat today.',
+  title: {
+    absolute: "ARA Spa | Luxury Spa & Wellness Sanctuary in Jubilee Hills, Hyderabad",
+  },
+  description:
+    "Experience bespoke body therapies, authentic Thai bodywork, deep tissue massage, and private couple suites at ARA Spa in Jubilee Hills, Hyderabad. Book an appointment today.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
-export const revalidate = 0;
-export const dynamic = 'force-dynamic';
-
-function getGalleryImages() {
-  return [
-    "/gallery/spa-interior-11.jpeg",
-    "/gallery/spa-interior-13.jpeg",
-    "/gallery/spa-interior-10.jpeg",
-    "/gallery/spa-interior-4.jpeg",
-    "/gallery/spa-interior-7.jpeg",
-    "/gallery/spa-interior-5.jpeg",
-    "/gallery/spa-interior-12.jpeg"
-  ];
-}
-
 export default function Home() {
-  const galleryImages = getGalleryImages();
-  
   return (
     <>
       <Hero />
       <Marquee />
       <TrustBar />
       <AboutPreview />
+      <SanctuaryExperience />
       <ServicesPreview />
       <TestimonialsPreview />
-      <GalleryPreview images={galleryImages} />
+      <GalleryPreview />
       <BookingSection />
       <ContactPreview />
     </>

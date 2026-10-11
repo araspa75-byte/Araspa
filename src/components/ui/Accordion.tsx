@@ -14,21 +14,21 @@ interface AccordionItemProps {
 
 const AccordionItem = ({ title, content, isOpen, onClick }: AccordionItemProps) => {
   return (
-    <div className="border-b border-gold/20">
+    <div className="border-b border-espresso/15">
       <button
-        className="flex w-full items-center justify-between py-6 text-left focus:outline-none"
+        className="flex w-full items-center justify-between py-6 text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-gold group"
         onClick={onClick}
         aria-expanded={isOpen}
       >
-        <span className="font-heading text-xl text-charcoal font-medium">
+        <span className="font-heading text-lg sm:text-xl text-espresso font-semibold group-hover:text-gold transition-colors">
           {title}
         </span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="flex-shrink-0 ml-4 text-gold"
         >
-          <ChevronDown size={24} />
+          <ChevronDown size={22} />
         </motion.div>
       </button>
       <AnimatePresence initial={false}>
@@ -37,10 +37,10 @@ const AccordionItem = ({ title, content, isOpen, onClick }: AccordionItemProps) 
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            <div className="pb-6 pr-8 text-charcoal-light font-sans leading-relaxed">
+            <div className="pb-6 pr-6 text-charcoal-light font-sans text-sm sm:text-base leading-relaxed">
               {content}
             </div>
           </motion.div>

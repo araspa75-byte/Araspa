@@ -1,21 +1,117 @@
-# ARA Spa
+# ARA Spa — Luxury Wellness & Bodywork Sanctuary
 
-> Luxury Spa & Relaxation in Hyderabad
+> Make Space for Stillness. Premium wellness center located in Jubilee Hills, Hyderabad, Telangana, India.
 
-ARA Spa is a top-rated spa in Madhapur/Jubilee Hills, Hyderabad, offering premium wellness and relaxation experiences.
+## Business Entity Summary
+- **Official Name**: ARA Spa (Legal: ARA Spa & Wellness)
+- **Website**: https://www.araspa.co.in/
+- **Industry Type**: Luxury Day Spa, Health and Beauty Business
+- **Address**: Unit 212, 2nd Floor, Aditya Enclave, Opp. Metro Pillar No. 1677, Jubilee Hills, Hyderabad, Telangana 500033, India
+- **Coordinates**: 17.4326° N, 78.4071° E
+- **Telephone / WhatsApp**: +91 77889 93406
+- **Email**: Araspa75@gmail.com
+- **Operating Hours**: Monday – Sunday, 9:30 AM – 10:00 PM IST (Open all 7 days, including public holidays)
+- **Google Maps CID**: 4185948183911949870
+- **Google Maps Directions**: https://maps.google.com/?cid=4185948183911949870
 
-## Services
-- Deep Tissue Massage
-- Traditional Thai Massage
-- Swedish Stress Relief
-- Luxury Couple Packages
+## Verified Treatment Catalog (12 Therapies)
+All treatments take place in private soundproof suites with certified therapists and sanitized organic linens.
 
-## Location
-metro piller no 1677, Ara spa, 2nd floor, unit no 212, Aditya Enclave, Madhapur/Jubilee Hills, Hyderabad, Telangana 500033, India
+1. **Aroma Therapy**
+   - Category: Holistic & Traditional
+   - Description: Cold-pressed botanical essential oils worked into muscle groups with rhythmic Swedish flow.
+   - Durations: 30 min, 45 min, 60 min, 90 min
+   - Starting Price: ₹1,200
+   - URL: https://www.araspa.co.in/services/aroma-therapy
 
-## Contact
-- Phone / WhatsApp: +91 77889 93406
-- Email: Araspa75@gmail.com
+2. **Swedish Massage**
+   - Category: Deep Relief
+   - Description: Classic European muscular relaxation with effleurage and friction strokes to relieve daily fatigue.
+   - Durations: 30 min, 45 min, 60 min, 90 min
+   - Starting Price: ₹1,300
+   - URL: https://www.araspa.co.in/services/swedish-massage
 
-## Opening Hours
-- Monday to Sunday: 09:30 - 22:00
+3. **Balinese Massage**
+   - Category: Holistic & Traditional
+   - Description: Indonesian therapy combining gentle stretching, acupressure, and warm aromatic oils.
+   - Durations: 30 min, 45 min, 60 min, 90 min
+   - Starting Price: ₹1,400
+   - URL: https://www.araspa.co.in/services/balinese-massage
+
+4. **Deep Tissue Massage**
+   - Category: Deep Relief
+   - Description: Sustained firm pressure targeting chronic myofascial adhesions, stiff lumbar, and shoulder knots.
+   - Durations: 30 min, 45 min, 60 min, 90 min
+   - Starting Price: ₹1,500
+   - URL: https://www.araspa.co.in/services/deep-tissue-massage
+
+5. **Traditional Thai Massage**
+   - Category: Holistic & Traditional
+   - Description: Authentic dry floor-mat bodywork with assisted yogic stretches and energy line (Sen) acupressure.
+   - Durations: 45 min, 60 min, 90 min
+   - Starting Price: ₹1,800
+   - URL: https://www.araspa.co.in/services/traditional-thai-massage
+
+6. **Hot Stone Therapy**
+   - Category: Deep Relief
+   - Description: Heated volcanic basalt stones combined with gliding oil strokes to melt stubborn muscular stiffness.
+   - Durations: 60 min, 90 min
+   - Starting Price: ₹2,200
+   - URL: https://www.araspa.co.in/services/hot-stone-therapy
+
+7. **Moroccan Bath (Hammam)**
+   - Category: Exfoliation & Bath
+   - Description: Traditional steam therapy, black olive soap application, and Kessa glove dead-cell exfoliation.
+   - Durations: 60 min, 90 min
+   - Starting Price: ₹2,800
+   - URL: https://www.araspa.co.in/services/moroccan-bath
+
+8. **Organic Body Scrub**
+   - Category: Exfoliation & Bath
+   - Description: Natural Himalayan pink salt and botanical scrub eliminating dull skin for radiant smoothness.
+   - Durations: 45 min, 60 min
+   - Starting Price: ₹1,600
+   - URL: https://www.araspa.co.in/services/body-scrub
+
+9. **Foot Reflexology**
+   - Category: Specialty & Couples
+   - Description: Targeted acupressure across foot reflex zones stimulating corresponding organs and easing fatigue.
+   - Durations: 30 min, 45 min, 60 min
+   - Starting Price: ₹800
+   - URL: https://www.araspa.co.in/services/foot-reflexology
+
+10. **Head, Neck & Shoulder Relief**
+    - Category: Deep Relief
+    - Description: Focused cranial acupressure and trapezius knot release for desk-bound professionals.
+    - Durations: 30 min, 45 min
+    - Starting Price: ₹900
+    - URL: https://www.araspa.co.in/services/head-neck-shoulder
+
+11. **Couple Suite Sanctuary**
+    - Category: Specialty & Couples
+    - Description: Side-by-side massage retreat in a private soundproof double suite with ensuite facilities.
+    - Durations: 60 min, 90 min, 120 min
+    - Starting Price: ₹4,000 (for two)
+    - URL: https://www.araspa.co.in/services/couples-massage
+
+12. **Ayurvedic Potli Therapy**
+    - Category: Holistic & Traditional
+    - Description: Warm herbal poultices infused with classical medicated oils pressed rhythmically along painful joints.
+    - Durations: 60 min, 90 min
+    - Starting Price: ₹2,200
+    - URL: https://www.araspa.co.in/services/potli-massage
+
+## Multi-Treatment Retreat Packages
+- **The Executive Reset**: 90 min (₹3,500) — Deep tissue bodywork combined with cranial acupressure.
+- **Couples Sanctuary Escape**: 90 min for two (₹6,500) — Private double suite, custom oils, side-by-side Balinese or Swedish therapy.
+- **Moroccan Hammam & Glow**: 105 min (₹4,200) — Full Hammam steam, Kessa exfoliation, and 45-min restorative back massage.
+- **Signature Master Retreat**: 120 min (₹5,500) — Thai mobilizations, heated volcanic basalt stones, and deep myofascial release.
+- URL: https://www.araspa.co.in/packages
+
+## Booking & Reservation Policy
+- **Model**: Concierge appointment request with direct human review.
+- **Payment**: Settled at the spa reception upon arrival via Cash, Credit/Debit Card, or UPI (GPay/PhonePe). No false online card charges.
+- **Cancellation**: Complimentary rescheduling requested at least 2 hours in advance.
+- **Arrival**: Guests are recommended to arrive 15 minutes prior to appointment.
+- **Online Form**: https://www.araspa.co.in/contact
+- **WhatsApp Concierge**: https://wa.me/917788993406

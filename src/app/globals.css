@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,47 +8,55 @@
   :root {
     --font-inter: 'Inter', sans-serif;
     --font-playfair: 'Playfair Display', serif;
-    
-    --color-cream: 253 251 247;
-    --color-beige: 245 240 230;
-    --color-gold-light: 229 211 179;
-    --color-gold: 197 168 128;
-    --color-gold-dark: 163 134 93;
-    --color-charcoal-light: 74 74 74;
-    --color-charcoal: 44 44 44;
-    --color-charcoal-dark: 26 26 26;
-    --color-forest-light: 58 90 64;
-    --color-forest: 43 64 46;
-    --color-forest-dark: 28 42 30;
-    
-    /* Fixed colors that do not invert in dark mode */
-    --color-cream-fixed: 253 251 247;
-    --color-charcoal-fixed: 44 44 44;
-  }
+    --font-serif-accent: 'Cormorant Garamond', serif;
 
-  .dark {
-    color-scheme: dark;
-    /* Invert backgrounds to dark */
-    --color-cream: 26 26 26;       /* maps to charcoal-dark */
-    --color-beige: 44 44 44;       /* maps to charcoal */
+    /* Luxury Warm Editorial Palette */
+    --color-ivory: 248 245 238;         /* #F8F5EE Warm Ivory */
+    --color-cream: 251 249 244;         /* #FBF9F4 Soft White Cream */
+    --color-linen: 242 238 229;         /* #F2EEE5 Natural Linen */
+    --color-taupe: 155 139 124;         /* #9B8B7C Warm Taupe */
     
-    /* Invert foregrounds to light */
-    --color-charcoal: 253 251 247; /* maps to cream */
-    --color-charcoal-light: 245 240 230; /* maps to beige */
-    --color-charcoal-dark: 255 255 255; /* pure white */
+    /* Golds & Champagne Accents */
+    --color-champagne: 216 193 154;     /* #D8C19A Champagne */
+    --color-gold: 173 141 91;           /* #AD8D5B Muted Antique Gold */
+    --color-gold-dark: 140 110 65;      /* #8C6E41 Deep Antique Gold */
+    --color-gold-light: 236 223 198;    /* #ECDFC6 Light Champagne */
+
+    /* Espressos & Charcoals */
+    --color-espresso: 41 35 31;         /* #29231F Deep Espresso */
+    --color-charcoal: 26 22 20;         /* #1A1614 Deep Charcoal */
+    --color-charcoal-light: 85 75 68;   /* #554B44 Muted Bark Charcoal */
+    
+    /* Sage / Forest */
+    --color-sage: 77 94 80;             /* #4D5E50 Muted Botanical Sage */
+    --color-sage-light: 228 233 228;
+
+    /* Base mappings */
+    --color-bg-primary: var(--color-ivory);
+    --color-text-primary: var(--color-espresso);
   }
 
   body {
-    background-color: rgb(var(--color-cream));
-    color: rgb(var(--color-charcoal));
+    background-color: rgb(var(--color-ivory));
+    color: rgb(var(--color-espresso));
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Selection style */
+  ::selection {
+    background-color: #D8C19A;
+    color: #1A1614;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .font-serif-accent {
+    font-family: var(--font-serif-accent);
   }
   .scrollbar-hide {
     scrollbar-width: none;
@@ -58,15 +66,43 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+  .bg-noise {
+    background-image: radial-gradient(rgba(41, 35, 31, 0.03) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+  .glass-luxury {
+    background: rgba(248, 245, 238, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .glass-dark-luxury {
+    background: rgba(26, 22, 20, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 135px;
+  scroll-padding-top: 100px;
 }
 
-/* Remove default focus outline and replace with elegant ring */
+/* Accessible and refined focus outline */
 *:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px #FDFBF7, 0 0 0 4px #C5A880;
+  box-shadow: 0 0 0 2px #F8F5EE, 0 0 0 4px #AD8D5B;
+}
+
+/* Subtle micro-animation utility */
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-subtle {
+  animation: floatSubtle 6s ease-in-out infinite;
 }

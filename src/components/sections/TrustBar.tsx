@@ -1,24 +1,27 @@
 import React from "react";
-import { Star, CheckCircle2, ShieldCheck, Heart, Sparkles, Clock } from "lucide-react";
+import { ShieldCheck, Sparkles, HeartHandshake, Leaf, Clock, MapPin } from "lucide-react";
 
 const trustItems = [
-  { icon: Star, text: "5.0 Google Rating" },
-  { icon: CheckCircle2, text: "Certified Therapists" },
-  { icon: ShieldCheck, text: "Top Rated in Hyderabad" },
-  { icon: Sparkles, text: "Luxury Private Rooms" },
-  { icon: Heart, text: "Couple Friendly" },
-  { icon: Clock, text: "Madhapur/Jubilee Hills" },
+  { icon: ShieldCheck, text: "Certified Therapists" },
+  { icon: Sparkles, text: "Soundproof Private Suites" },
+  { icon: Leaf, text: "Organic Cruelty-Free Oils" },
+  { icon: HeartHandshake, text: "Dedicated Couple Suites" },
+  { icon: MapPin, text: "Jubilee Hills Landmark" },
+  { icon: Clock, text: "Open 9:30 AM – 10:00 PM Daily" },
 ];
 
 export function TrustBar() {
   return (
-    <section className="bg-[#f8f9fa] dark:bg-[#1a1a1a] py-5 border-y border-black/5 dark:border-white/5 relative z-30 transition-colors">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12">
+    <section className="bg-linen py-6 border-b border-espresso/10 relative z-20">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-4 items-center justify-center">
           {trustItems.map((item, index) => (
-            <div key={index} className="flex items-center space-x-2 text-charcoal dark:text-cream font-semibold transition-colors">
-              <item.icon className="w-5 h-5 text-gold" />
-              <span className="font-sans text-sm md:text-[15px] tracking-wide">
+            <div
+              key={index}
+              className="flex items-center space-x-2.5 text-espresso justify-center sm:justify-start lg:justify-center"
+            >
+              <item.icon className="w-4 h-4 text-gold shrink-0" />
+              <span className="font-sans text-xs md:text-xs tracking-wider uppercase font-semibold text-espresso/90">
                 {item.text}
               </span>
             </div>

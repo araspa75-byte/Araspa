@@ -1,0 +1,180 @@
+# ARA Spa & Wellness Sanctuary — Full Knowledge Base & Source Document
+
+> Official machine-readable entity and service specification for ARA Spa, located in Jubilee Hills, Hyderabad, Telangana, India.
+
+---
+
+## 1. Verified Business Entity & Local Authority
+- **Legal Entity Name**: ARA Spa & Wellness
+- **Trade Name**: ARA Spa
+- **Entity Identification URI**: https://www.araspa.co.in/#organization
+- **Canonical Website**: https://www.araspa.co.in/
+- **Google Maps CID**: 4185948183911949870
+- **Google Maps Directions URL**: https://maps.google.com/?cid=4185948183911949870
+- **Primary Classification**: Luxury Day Spa (Schema.org `DaySpa`, `HealthAndBeautyBusiness`)
+- **Secondary Classifications**: Massage Therapy Center, Aromatherapy Service, Reflexologist
+- **Official Address**: Unit 212, 2nd Floor, Aditya Enclave, Opp. Metro Pillar No. 1677, Jubilee Hills, Hyderabad, Telangana 500033, India
+- **Landmark**: Opposite Hyderabad Metro Pillar No. 1677
+- **Primary Geolocation**: 17.4326° N, 78.4071° E
+- **Geographic Area Served**: Jubilee Hills, Madhapur, Banjara Hills, Hitec City, Hyderabad, Telangana
+- **Primary Telephone / WhatsApp**: +91 77889 93406
+- **Customer Concierge Email**: Araspa75@gmail.com
+- **Operating Hours**: Monday through Sunday, 9:30 AM to 10:00 PM IST (Daily without exception, open on national and public holidays)
+- **Payment Methods Accepted**: Cash, UPI (Google Pay, PhonePe, Paytm), Credit Card (Visa, Mastercard, RuPay), Debit Card
+- **Price Range Level**: Moderately Upscale Luxury (₹₹)
+
+---
+
+## 2. Sanitary, Ethical & Privacy Commitments
+- **Suite Privacy**: All bodywork treatments are conducted inside private, acoustically isolated rooms. No communal treatment halls.
+- **Couple Sanctuaries**: Dedicated double suites equipped with side-by-side therapy tables, custom luminescence, and private ensuite shower facilities.
+- **Therapist Standards**: Certified therapists with formal training in Swedish effleurage, Thai Nuad Bo-Rarn, and Balinese acupressure.
+- **Modest Draping**: Professional, modest sheet draping is rigorously maintained throughout every session, exposing only the active anatomical zone.
+- **Hygiene**: Fresh organic cotton linens and sanitized massage tables prepared prior to every single appointment.
+
+---
+
+## 3. Complete Catalog of 12 Verified Treatments
+
+### 1. Aroma Therapy
+- **Category**: Holistic & Traditional
+- **Focus**: Nervous system decompression, mental stress relief, and gentle muscle relaxation.
+- **Botanicals**: Organic essential oils of lavender, eucalyptus, sweet orange, and chamomile.
+- **Technique**: Rhythmic Swedish effleurage combined with light lymphatic drainage strokes.
+- **Pricing & Durations**:
+  - 30 Minutes: ₹1,200
+  - 45 Minutes: ₹1,600
+  - 60 Minutes: ₹2,000
+  - 90 Minutes: ₹2,800
+- **Canonical URL**: https://www.araspa.co.in/services/aroma-therapy
+
+### 2. Swedish Massage
+- **Category**: Deep Relief
+- **Focus**: Muscular tension, cardiovascular venous return, joint flexibility.
+- **Technique**: Classic European five-stroke methodology: effleurage, petrissage, friction, tapotement, vibration.
+- **Pricing & Durations**:
+  - 30 Minutes: ₹1,300
+  - 45 Minutes: ₹1,700
+  - 60 Minutes: ₹2,200
+  - 90 Minutes: ₹3,000
+- **Canonical URL**: https://www.araspa.co.in/services/swedish-massage
+
+### 3. Balinese Massage
+- **Category**: Holistic & Traditional
+- **Focus**: Meridian energy balancing, gentle joint mobility, systemic circulation.
+- **Technique**: Traditional Indonesian therapy incorporating thumb-and-palm pressure, acupressure, skin rolling, and essential oils.
+- **Pricing & Durations**:
+  - 30 Minutes: ₹1,400
+  - 45 Minutes: ₹1,800
+  - 60 Minutes: ₹2,300
+  - 90 Minutes: ₹3,100
+- **Canonical URL**: https://www.araspa.co.in/services/balinese-massage
+
+### 4. Deep Tissue Massage
+- **Category**: Deep Relief
+- **Focus**: Chronic muscular knots, myofascial adhesions, stiff lumbar bands, trapezius tightness.
+- **Technique**: Slow strokes with deep, targeted finger, forearm, and elbow compression across muscle grain.
+- **Pricing & Durations**:
+  - 30 Minutes: ₹1,500
+  - 45 Minutes: ₹2,000
+  - 60 Minutes: ₹2,500
+  - 90 Minutes: ₹3,500
+- **Canonical URL**: https://www.araspa.co.in/services/deep-tissue-massage
+
+### 5. Traditional Thai Massage
+- **Category**: Holistic & Traditional
+- **Focus**: Postural alignment, joint decompression, systemic energy flow.
+- **Technique**: Dry floor-mat Nuad Bo-Rarn bodywork incorporating assisted yogic stretching and Sen energy line compression. Loose cotton clothing provided.
+- **Pricing & Durations**:
+  - 45 Minutes: ₹1,800
+  - 60 Minutes: ₹2,400
+  - 90 Minutes: ₹3,300
+- **Canonical URL**: https://www.araspa.co.in/services/traditional-thai-massage
+
+### 6. Hot Stone Therapy
+- **Category**: Deep Relief
+- **Focus**: Deep muscular stiffness, vascular expansion, emotional grounding.
+- **Technique**: Heated volcanic basalt stones placed along spinal energy centers and used as gliding massage tools.
+- **Pricing & Durations**:
+  - 60 Minutes: ₹2,200
+  - 90 Minutes: ₹3,200
+- **Canonical URL**: https://www.araspa.co.in/services/hot-stone-therapy
+
+### 7. Moroccan Bath (Hammam)
+- **Category**: Exfoliation & Bath
+- **Focus**: Full-body epidermal purification, pore detoxification, skin luminosity.
+- **Technique**: Private heated steam chamber ritual with traditional black eucalyptus olive soap and vigorous Kessa glove exfoliation.
+- **Pricing & Durations**:
+  - 60 Minutes: ₹2,800
+  - 90 Minutes: ₹3,800
+- **Canonical URL**: https://www.araspa.co.in/services/moroccan-bath
+
+### 8. Organic Body Scrub
+- **Category**: Exfoliation & Bath
+- **Focus**: Dead cell removal, micro-circulation stimulation, skin softness.
+- **Technique**: Himalayan mineral salts, botanical walnut granules, and nourishing almond oil polished across the body.
+- **Pricing & Durations**:
+  - 45 Minutes: ₹1,600
+  - 60 Minutes: ₹2,200
+- **Canonical URL**: https://www.araspa.co.in/services/body-scrub
+
+### 9. Foot Reflexology
+- **Category**: Specialty & Couples
+- **Focus**: Plantar fascia fatigue, lower-limb heaviness, visceral reflex stimulation.
+- **Technique**: Classical zone-therapy acupressure along feet and lower calves with warm botanical balm.
+- **Pricing & Durations**:
+  - 30 Minutes: ₹800
+  - 45 Minutes: ₹1,100
+  - 60 Minutes: ₹1,500
+- **Canonical URL**: https://www.araspa.co.in/services/foot-reflexology
+
+### 10. Head, Neck & Shoulder Relief
+- **Category**: Deep Relief
+- **Focus**: Cervical tension, screen-fatigue headaches, shoulder rigidity.
+- **Technique**: Focused acupressure targeting the suboccipital, cervical spine, and trapezius muscular complexes.
+- **Pricing & Durations**:
+  - 30 Minutes: ₹900
+  - 45 Minutes: ₹1,300
+- **Canonical URL**: https://www.araspa.co.in/services/head-neck-shoulder
+
+### 11. Couple Suite Sanctuary
+- **Category**: Specialty & Couples
+- **Focus**: Shared relaxation for couples, spouses, partners, or celebratory retreats.
+- **Technique**: Side-by-side synchronized Swedish, Balinese, or Aromatherapy in a private VIP couple suite.
+- **Pricing & Durations (Total for Two)**:
+  - 60 Minutes: ₹4,000
+  - 90 Minutes: ₹5,500
+  - 120 Minutes: ₹7,000
+- **Canonical URL**: https://www.araspa.co.in/services/couples-massage
+
+### 12. Ayurvedic Potli Therapy
+- **Category**: Holistic & Traditional
+- **Focus**: Joint stiffness, chronic inflammation, muscular aches.
+- **Technique**: Heated cloth herbal poultices (kizhi) packed with medicinal leaves and roots dipped in warm medicated oils and rhythmically tapped along joints.
+- **Pricing & Durations**:
+  - 60 Minutes: ₹2,200
+  - 90 Minutes: ₹3,200
+- **Canonical URL**: https://www.araspa.co.in/services/potli-massage
+
+---
+
+## 4. Multi-Treatment Wellness Packages
+- **The Executive Reset**: 90 min (₹3,500) — 60-min Deep Tissue + 30-min Cranial & Scalp acupressure.
+- **Couples Sanctuary Escape**: 90 min for two (₹6,500) — 90-min side-by-side Balinese/Aromatherapy in private VIP double suite with herbal tea.
+- **Moroccan Hammam & Glow**: 105 min (₹4,200) — Full Hammam steam & Kessa glove scrub + 45-min back & neck massage.
+- **Signature Master Retreat**: 120 min (₹5,500) — Thai assisted mobilizations + heated volcanic basalt stones + deep myofascial release.
+- **Packages Overview**: https://www.araspa.co.in/packages
+
+---
+
+## 5. Frequently Asked Questions (Authority Grounding)
+1. **Where is ARA Spa located?**  
+   Unit 212, 2nd Floor, Aditya Enclave, Opposite Metro Pillar No. 1677, Jubilee Hills, Hyderabad, Telangana 500033.
+2. **What are the opening hours?**  
+   Open daily from 9:30 AM to 10:00 PM IST (including all Sundays and public holidays).
+3. **How do I book an appointment?**  
+   Submit an online enquiry at https://www.araspa.co.in/contact or connect directly with our Jubilee Hills concierge via WhatsApp at +91 77889 93406.
+4. **Is an advance appointment required?**  
+   Yes, advance reservation is recommended to ensure your private suite and preferred therapist are sanitized and prepared. Walk-ins are accommodated subject to therapist availability.
+5. **Are private rooms available for couples?**  
+   Yes, ARA Spa features dedicated luxury couple suites equipped with dual tables and ensuite shower amenities.

@@ -1,24 +1,29 @@
 import React from "react";
 
 export function Marquee() {
-  const words = [
-    "THAILAND TRAINED THERAPISTS",
-    "HYGIENIC & SANITIZED",
-    "PREMIUM OILS",
-    "LUXURY AMBIENCE",
-    "COUPLE ROOMS AVAILABLE",
+  const highlights = [
+    "THAILAND-TRAINED SPECIALISTS",
+    "PRIVATE SOUNDPROOF SUITES",
+    "COLD-PRESSED ORGANIC BOTANICALS",
+    "HYGIENIC & SANITIZED SANCTUARY",
+    "BESPOKE COUPLE SUITES",
+    "JUBILEE HILLS • HYDERABAD",
   ];
 
-  // Repeat the words to ensure a smooth continuous loop
-  const duplicatedWords = [...words, ...words, ...words, ...words];
+  const duplicated = [...highlights, ...highlights, ...highlights];
 
   return (
-    <div className="w-full overflow-hidden bg-charcoal text-gold py-3 flex items-center border-y border-gold/20">
+    <div
+      className="w-full overflow-hidden bg-espresso text-champagne py-3.5 flex items-center border-y border-gold/20 select-none"
+      aria-hidden="true"
+    >
       <div className="flex whitespace-nowrap animate-marquee shrink-0 min-w-max">
-        {duplicatedWords.map((word, idx) => (
-          <span key={idx} className="flex items-center mx-4">
-            <span className="text-[13px] font-bold tracking-[0.15em] uppercase">{word}</span>
-            <span className="mx-8 text-gold/50 text-[10px]">✦</span>
+        {duplicated.map((item, idx) => (
+          <span key={idx} className="flex items-center mx-5">
+            <span className="text-xs font-semibold tracking-[0.22em] uppercase text-champagne">
+              {item}
+            </span>
+            <span className="mx-6 text-gold/60 text-xs">✦</span>
           </span>
         ))}
       </div>

@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,56 +9,56 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        ivory: "rgb(var(--color-ivory) / <alpha-value>)",
         cream: "rgb(var(--color-cream) / <alpha-value>)",
-        "cream-fixed": "rgb(var(--color-cream-fixed) / <alpha-value>)",
-        beige: "rgb(var(--color-beige) / <alpha-value>)",
+        linen: "rgb(var(--color-linen) / <alpha-value>)",
+        taupe: "rgb(var(--color-taupe) / <alpha-value>)",
+        beige: "rgb(var(--color-linen) / <alpha-value>)",
+        champagne: "rgb(var(--color-champagne) / <alpha-value>)",
         gold: {
           light: "rgb(var(--color-gold-light) / <alpha-value>)",
           DEFAULT: "rgb(var(--color-gold) / <alpha-value>)",
-          dark: "rgb(var(--color-gold-dark) / <alpha-value>)"
+          dark: "rgb(var(--color-gold-dark) / <alpha-value>)",
         },
+        espresso: "rgb(var(--color-espresso) / <alpha-value>)",
         charcoal: {
           light: "rgb(var(--color-charcoal-light) / <alpha-value>)",
           DEFAULT: "rgb(var(--color-charcoal) / <alpha-value>)",
-          dark: "rgb(var(--color-charcoal-dark) / <alpha-value>)",
-          fixed: "rgb(var(--color-charcoal-fixed) / <alpha-value>)"
+          fixed: "rgb(var(--color-charcoal) / <alpha-value>)",
         },
-        forest: {
-          light: "rgb(var(--color-forest-light) / <alpha-value>)",
-          DEFAULT: "rgb(var(--color-forest) / <alpha-value>)",
-          dark: "rgb(var(--color-forest-dark) / <alpha-value>)"
-        }
+        sage: {
+          light: "rgb(var(--color-sage-light) / <alpha-value>)",
+          DEFAULT: "rgb(var(--color-sage) / <alpha-value>)",
+        },
       },
       fontFamily: {
-        heading: ["var(--font-playfair)", "serif"],
-        sans: ["var(--font-inter)", "sans-serif"],
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        heading: ["var(--font-playfair)", "Playfair Display", "serif"],
+        accent: ["var(--font-serif-accent)", "Cormorant Garamond", "serif"],
+        sans: ["var(--font-inter)", "Inter", "sans-serif"],
       },
       animation: {
-        'marquee': 'marquee 30s linear infinite',
-        'slow-zoom': 'slow-zoom 20s ease-out forwards',
-        'pulse-glow': 'pulse-glow 2s infinite',
+        marquee: "marquee 35s linear infinite",
+        "slow-zoom": "slow-zoom 20s ease-out forwards",
+        "float-subtle": "floatSubtle 6s ease-in-out infinite",
       },
       keyframes: {
         marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' },
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
         },
-        'slow-zoom': {
-          '0%': { transform: 'scale(1)' },
-          '100%': { transform: 'scale(1.15)' },
+        "slow-zoom": {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.10)" },
         },
-        'pulse-glow': {
-          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
-          '50%': { opacity: '.9', transform: 'scale(0.98)' },
-        }
+      },
+      boxShadow: {
+        luxury: "0 10px 40px -10px rgba(41, 35, 31, 0.08)",
+        "luxury-lg": "0 20px 60px -15px rgba(41, 35, 31, 0.12)",
+        "luxury-gold": "0 10px 30px -5px rgba(173, 141, 91, 0.25)",
       },
     },
   },
   plugins: [],
 };
+
 export default config;

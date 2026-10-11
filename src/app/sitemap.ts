@@ -1,49 +1,35 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
+import { TREATMENTS } from "@/content/treatments";
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.araspa.co.in';
+  const baseUrl = "https://www.araspa.co.in";
 
-  const services = [
-    'aroma-therapy',
-    'balinese-therapy',
-    'thai-therapy',
-    'deep-tissue-massage',
-    'swedish-massage',
-    'tantra',
-    'moroccan-bath-massage',
-    'body-scrubbing-massage',
-    'four-hands-massage',
-    'hot-stone-massage',
-    'couple-massage',
-    'signature-massage',
-  ];
-
-  const serviceUrls = services.map((slug) => ({
-    url: `${baseUrl}/services/${slug}`,
+  const treatmentUrls = TREATMENTS.map((t) => ({
+    url: `${baseUrl}/services/${t.slug}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
+    changeFrequency: "weekly" as const,
+    priority: 0.9,
   }));
 
   const routes = [
-    '',
-    '/about',
-    '/services',
-    '/packages',
-    '/gallery',
-    '/testimonials',
-    '/faq',
-    '/contact',
-    '/privacy-policy',
-    '/terms-conditions'
+    { path: "", priority: 1.0, freq: "weekly" as const },
+    { path: "/services", priority: 0.9, freq: "weekly" as const },
+    { path: "/packages", priority: 0.85, freq: "monthly" as const },
+    { path: "/about", priority: 0.8, freq: "monthly" as const },
+    { path: "/gallery", priority: 0.8, freq: "monthly" as const },
+    { path: "/contact", priority: 0.9, freq: "weekly" as const },
+    { path: "/testimonials", priority: 0.75, freq: "monthly" as const },
+    { path: "/faq", priority: 0.75, freq: "monthly" as const },
+    { path: "/privacy-policy", priority: 0.5, freq: "yearly" as const },
+    { path: "/terms-conditions", priority: 0.5, freq: "yearly" as const },
   ].map((route) => ({
-    url: `${baseUrl}${route}`,
+    url: `${baseUrl}${route.path}`,
     lastModified: new Date(),
-    changeFrequency: route === '' ? 'weekly' as const : 'monthly' as const,
-    priority: route === '' ? 1 : 0.8,
+    changeFrequency: route.freq,
+    priority: route.priority,
   }));
 
-  return [...routes, ...serviceUrls];
+  return [...routes, ...treatmentUrls];
 }

@@ -1,182 +1,21 @@
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Button } from '@/components/ui/Button';
-import Link from 'next/link';
-import { Clock, CheckCircle2 } from 'lucide-react';
-import { ImageCarousel } from '@/components/ui/ImageCarousel';
-
-const serviceDetails: Record<string, {
-  title: string;
-  description: string;
-  image: string;
-  altImage?: string;
-  duration: string;
-  benefits: string[];
-  process: string[];
-  pricing: { time: string; price: string }[];
-}> = {
-  "aroma-therapy": {
-    title: "Aroma",
-    description: "Organic essential oils like lavender, eucalyptus, and chamomile — worked into your muscles with slow, deliberate strokes. Great for winding down after a long week.",
-    image: "/images/services/aroma-therapy.jpeg",
-    duration: "30 - 90 min",
-    benefits: ["Lifts your mood noticeably", "Quiets a busy, overworked mind", "Hydrates and nourishes dry skin", "Puts you in a state of deep calm"],
-    process: ["Choose your preferred scent blend", "Gentle oil application across your whole body", "Lymphatic drainage to reduce puffiness", "Finishing scalp massage"],
-    pricing: [
-      { time: "30 MIN", price: "₹1200/-" },
-      { time: "45 MIN", price: "₹1500/-" },
-      { time: "1 HOUR", price: "₹2000/-" },
-      { time: "90 MIN", price: "₹2500/-" }
-    ]
-  },
-  "balinese-therapy": {
-    title: "Balinese Therapy",
-    description: "An Indonesian technique that mixes gentle stretching with acupressure and warm aromatherapy oils. Loosens you up without the deep pressure.",
-    image: "/images/services/balinese-therapy.jpeg",
-    duration: "30 - 90 min",
-    benefits: ["Whole body feels renewed", "Stiff joints loosen up", "Helps flush out metabolic waste", "Leaves you in a deeply calm state"],
-    process: ["Aromatherapy oils warmed and applied", "Gentle stretching of arms and legs", "Acupressure on key tension points", "Full-body flowing massage"],
-    pricing: [
-      { time: "30 MIN", price: "₹1500/-" },
-      { time: "45 MIN", price: "₹1800/-" },
-      { time: "1 HOUR", price: "₹2000/-" },
-      { time: "90 MIN", price: "₹2500/-" }
-    ]
-  },
-  "thai-therapy": {
-    title: "Thai Therapy",
-    description: "Assisted yoga-like stretches, firm acupressure, and rhythmic compressions. You don't just feel relaxed afterward — you feel taller and looser.",
-    image: "/images/services/thai-therapy.jpeg",
-    duration: "30 - 90 min",
-    benefits: ["Noticeably more flexible after one session", "Joint stiffness and aches ease up", "Energy levels bounce back", "Range of motion improves right away"],
-    process: ["Assisted yoga-like stretches", "Firm acupressure along key lines", "Rhythmic compressions across your body", "Quiet rest period to close"],
-    pricing: [
-      { time: "30 MIN", price: "₹2000/-" },
-      { time: "45 MIN", price: "₹2500/-" },
-      { time: "1 HOUR", price: "₹3000/-" },
-      { time: "90 MIN", price: "₹3500/-" }
-    ]
-  },
-  "deep-tissue-massage": {
-    title: "Deep Tissue",
-    description: "Firm, targeted pressure into your deepest muscle layers. Built for stiff shoulders, tight lower backs, and pain that won't quit.",
-    image: "/images/services/deep-tissue-massage.jpeg",
-    duration: "30 - 90 min",
-    benefits: ["Breaks up chronic muscle knots", "Gets stiff joints moving again", "Works through old scar tissue", "Reduces pain that's been lingering for weeks"],
-    process: ["Talk through your pain points with your therapist", "Deep, targeted pressure on problem areas", "Cross-fiber friction to release tight bands", "Gentle stretching and cooldown"],
-    pricing: [
-      { time: "30 MIN", price: "₹2000/-" },
-      { time: "45 MIN", price: "₹2500/-" },
-      { time: "1 HOUR", price: "₹3200/-" },
-      { time: "90 MIN", price: "₹4500/-" }
-    ]
-  },
-  "swedish-massage": {
-    title: "Swedish Therapy",
-    description: "Long, flowing strokes across your whole body. This is the classic — great for first-timers, stress relief, and anyone who just wants to melt into the table.",
-    image: "/images/services/swedish-massage.jpeg",
-    duration: "30 - 90 min",
-    benefits: ["Loosens tight, tired muscles", "Circulation improves noticeably", "Stress drops fast — you'll feel it", "Most guests sleep better that night"],
-    process: ["Warm oil applied to your skin", "Long, smooth strokes covering your whole body", "Kneading and circular pressure on tight spots", "Hot towel to finish"],
-    pricing: [
-      { time: "30 MIN", price: "₹1500/-" },
-      { time: "45 MIN", price: "₹2000/-" },
-      { time: "1 HOUR", price: "₹2500/-" },
-      { time: "90 MIN", price: "₹3500/-" }
-    ]
-  },
-  "tantra": {
-    title: "Tantra",
-    description: "A slow, intentional practice focused on breath and energy. Designed to quiet a racing mind and bring your whole body into a deep state of calm.",
-    image: "/images/services/tantra-therapy.jpeg",
-    duration: "30 - 90 min",
-    benefits: ["Resets your nervous system", "Mind goes genuinely quiet", "Body and mind feel reconnected", "A deep sense of stillness stays with you"],
-    process: ["Guided breathing to slow your system down", "Slow energy work along the body", "Full-body therapeutic touch", "Closing meditation"],
-    pricing: [
-      { time: "30 MIN", price: "₹1800/-" },
-      { time: "45 MIN", price: "₹2200/-" },
-      { time: "1 HOUR", price: "₹2700/-" },
-      { time: "90 MIN", price: "₹3500/-" }
-    ]
-  },
-  "moroccan-bath-massage": {
-    title: "Moroccan Bath Massage",
-    description: "An invigorating traditional cleansing ritual featuring exfoliating authentic Moroccan black soap, steam, and a full-body purifying scrub followed by a relaxing hydration massage. Leaves your skin radiant and intensely cleansed.",
-    image: "/images/services/moroccan-bath-massage.jpeg",
-    altImage: "/images/services/moroccan-bath-massage-alt.png",
-    duration: "60 - 120 min",
-    benefits: ["Deeply exfoliates dead skin cells and cleanses pores", "Stimulates healthy circulation and skin turnover", "Relieves muscle tension through purifying warmth", "Leaves whole-body skin feeling silky and luminous"],
-    process: ["Gentle steam relaxation to open pores and soften skin", "Application of authentic mineral-rich Moroccan black soap", "Full-body exfoliation using a traditional kessa exfoliating glove", "Nourishing oil finish and relaxation massage"],
-    pricing: [
-      { time: "1 HOUR", price: "₹3000/-" },
-      { time: "90 MIN", price: "₹4000/-" },
-      { time: "2 HOURS", price: "₹5000/-" }
-    ]
-  },
-  "body-scrubbing-massage": {
-    title: "Body Scrubbing Massage",
-    description: "A rejuvenating combination of full-body organic salt and herbal scrub exfoliation followed by a smooth, relaxing oil massage. Refreshes tired skin, removes dullness, and boosts cellular renewal.",
-    image: "/images/services/body-scrubbing-massage.jpeg",
-    duration: "45 - 90 min",
-    benefits: ["Polishes away dull, rough surface skin", "Encourages deep lymphatic detoxification and circulation", "Prevents ingrown hairs and rough patches", "Leaves body glowing and revitalized"],
-    process: ["Warm aroma infused towels applied to muscles", "Full-body thorough exfoliation with natural salts and botanicals", "Gentle rinse and warm towel cleansing", "Hydrating massage with organic botanical oils"],
-    pricing: [
-      { time: "45 MIN", price: "₹2000/-" },
-      { time: "1 HOUR", price: "₹2500/-" },
-      { time: "90 MIN", price: "₹3500/-" }
-    ]
-  },
-  "four-hands-massage": {
-    title: "Four Hands Massage",
-    description: "The ultimate relaxation indulgence where two expert therapists work in seamless, choreographed harmony. With four hands gently melting away tension simultaneously, your racing mind totally surrenders to relaxation.",
-    image: "/images/services/four-hands-massage.jpeg",
-    duration: "60 - 90 min",
-    benefits: ["Induces rapid and profound mental relaxation", "Overwhelms anxiety and stress as the mind surrenders control", "Double the tension release in half the normal time", "An unforgettable, deeply restorative spa experience"],
-    process: ["Consultation with both expert therapists on focus areas", "Synchronized warm oil application across both sides of the body", "Harmonious mirror-image strokes and muscle kneading", "Coordinated scalp and foot massage conclusion"],
-    pricing: [
-      { time: "1 HOUR", price: "₹4500/-" },
-      { time: "90 MIN", price: "₹6000/-" }
-    ]
-  },
-  "hot-stone-massage": {
-    title: "Hot Stone Massage",
-    description: "Smooth, heated volcanic basalt stones are strategically placed on key energy points and glided across tight muscle bands. The gentle heat penetrates deep into muscle cores to melt persistent rigidity and relieve fatigue.",
-    image: "/images/services/hot-stone-massage.jpeg",
-    duration: "60 - 90 min",
-    benefits: ["Deep penetrating heat relaxes stiff muscles without excessive physical pressure", "Improves blood flow and natural body warmth", "Calms the nervous system and relieves chronic stress", "Encourages deep, restful sleep and tranquility"],
-    process: ["Basalt stones sanitized and perfectly heated in water bowl", "Warm oil massage to prep muscles and skin", "Placement of heated stones along spinal chakra and muscle zones", "Gliding massage using heated stones as soothing massage tools"],
-    pricing: [
-      { time: "1 HOUR", price: "₹2800/-" },
-      { time: "90 MIN", price: "₹3800/-" }
-    ]
-  },
-  "couple-massage": {
-    title: "Couple Massage",
-    description: "Share a serene, binding wellness journey with your partner or loved one in our luxury couple's spa suite. Tailored treatments side-by-side with tranquil ambient lighting, aromatic scents, and absolute privacy.",
-    image: "/images/services/couple-massage.jpeg",
-    duration: "60 - 90 min",
-    benefits: ["Shared bonding time in a serene, peaceful luxury suite", "Customized pressure and massage styles for each individual", "Reduces relationship fatigue and invites shared relaxation", "A memorable date or celebratory anniversary retreat"],
-    process: ["Individual consultations for both partners in private suite", "Side-by-side treatments performed simultaneously by two therapists", "Customized aroma oils and treatment focus for each person", "Complimentary post-treatment organic tea in relaxation lounge"],
-    pricing: [
-      { time: "1 HOUR (FOR TWO)", price: "₹4500/-" },
-      { time: "90 MIN (FOR TWO)", price: "₹6500/-" }
-    ]
-  },
-  "signature-massage": {
-    title: "Signature Massage",
-    description: "Our crown jewel therapy combining the finest techniques from Thai stretches, Balinese acupressure, Deep Tissue muscle work, and warm Aromatherapy oils into one masterpiece treatment tailored uniquely to your body.",
-    image: "/images/services/signature-massage.jpeg",
-    duration: "60 - 120 min",
-    benefits: ["The absolute best of East and West massage philosophies combined", "Completely customized to address both surface tension and deep aches", "Restores energetic alignment while stretching out tight joints", "Our highest-rated treatment for complete rejuvenation"],
-    process: ["Comprehensive posture and muscular focus assessment", "Beginning dry Thai assisted stretches to awaken joints", "Transition to Deep Tissue and Balinese techniques with signature oils", "Finishing facial acupressure, head massage, and hot herbal towel"],
-    pricing: [
-      { time: "1 HOUR", price: "₹3500/-" },
-      { time: "90 MIN", price: "₹4500/-" },
-      { time: "2 HOURS", price: "₹5500/-" }
-    ]
-  }
-};
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import {
+  Clock,
+  CheckCircle2,
+  ChevronRight,
+  Sparkles,
+  Phone,
+  MessageSquare,
+  ShieldCheck,
+  Calendar,
+} from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { TREATMENTS, getTreatmentBySlug } from "@/content/treatments";
+import { ContactForm } from "@/components/ui/ContactForm";
+import { ServiceCard } from "@/components/ui/ServiceCard";
+import { BUSINESS_INFO, getWhatsAppUrl } from "@/content/business";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -184,94 +23,477 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
-  const service = serviceDetails[resolvedParams.slug as keyof typeof serviceDetails];
-  if (!service) return { title: 'Not Found' };
-  
+  const treatment = getTreatmentBySlug(resolvedParams.slug);
+
+  if (!treatment) return { title: "Treatment Not Found" };
+
   return {
-    title: `${service.title} | ARA Spa`,
-    description: service.description,
+    title: `${treatment.name} Therapy in Jubilee Hills`,
+    description: `${treatment.description} Starting from ${treatment.startingPrice} (${treatment.duration}). Private acoustic suite, certified therapist at ARA Spa Jubilee Hills.`,
+    alternates: {
+      canonical: `/services/${treatment.slug}`,
+    },
+    openGraph: {
+      title: `${treatment.name} in Jubilee Hills | ARA Spa Hyderabad`,
+      description: treatment.description,
+      images: [
+        {
+          url: treatment.image,
+          width: 800,
+          height: 600,
+          alt: `${treatment.name} therapy at ARA Spa Jubilee Hills`,
+        },
+      ],
+    },
   };
 }
 
-// Generate static params for SSG
 export function generateStaticParams() {
-  return Object.keys(serviceDetails).map((slug) => ({
-    slug,
+  return TREATMENTS.map((t) => ({
+    slug: t.slug,
   }));
 }
 
-export default async function ServiceDetail({ params }: Props) {
+export default async function ServiceDetailPage({ params }: Props) {
   const resolvedParams = await params;
-  const service = serviceDetails[resolvedParams.slug as keyof typeof serviceDetails];
+  const treatment = getTreatmentBySlug(resolvedParams.slug);
 
-  if (!service) {
+  if (!treatment) {
     notFound();
   }
 
+  // Related treatments (same category or nearby)
+  const relatedTreatments = TREATMENTS.filter(
+    (t) => t.slug !== treatment.slug
+  ).slice(0, 3);
+
+  const whatsappBookingUrl = getWhatsAppUrl({
+    treatmentName: treatment.name,
+  });
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `https://www.araspa.co.in/services/${treatment.slug}#service`,
+    name: `${treatment.name} at ARA Spa`,
+    serviceType: treatment.category,
+    description: treatment.description,
+    provider: {
+      "@type": "DaySpa",
+      "@id": "https://www.araspa.co.in/#organization",
+      name: "ARA Spa",
+      telephone: BUSINESS_INFO.phone,
+      url: "https://www.araspa.co.in/",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: `${BUSINESS_INFO.address.street}, ${BUSINESS_INFO.address.landmark}`,
+        addressLocality: "Hyderabad",
+        addressRegion: "Telangana",
+        postalCode: BUSINESS_INFO.address.postalCode,
+        addressCountry: "IN",
+      },
+    },
+    areaServed: [
+      { "@type": "City", name: "Hyderabad" },
+      { "@type": "AdministrativeArea", name: "Jubilee Hills" },
+    ],
+    offers: treatment.pricing.map((tier) => ({
+      "@type": "Offer",
+      price: tier.priceNumber,
+      priceCurrency: "INR",
+      name: `${treatment.name} (${tier.time})`,
+      eligibleDuration: tier.time,
+      availability: "https://schema.org/InStock",
+      url: `https://www.araspa.co.in/services/${treatment.slug}`,
+    })),
+    image: `https://www.araspa.co.in${treatment.image}`,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.araspa.co.in/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Treatments",
+        item: "https://www.araspa.co.in/services",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: treatment.name,
+        item: `https://www.araspa.co.in/services/${treatment.slug}`,
+      },
+    ],
+  };
+
+  const treatmentFaqs = [
+    {
+      q: `What should I expect during a ${treatment.name} session?`,
+      a: `${treatment.longDescription} Your therapist will customize pressure according to your preferences.`,
+    },
+    {
+      q: `How long is the session and what are the rates?`,
+      a: `${treatment.name} durations range from ${treatment.duration}, with verified rates starting at ${treatment.startingPrice}. Consult our pricing breakdown for full duration tiers.`,
+    },
+    {
+      q: `Is advance appointment booking required?`,
+      a: `Advance requests via website or WhatsApp (+91 77889 93406) are recommended to ensure your private suite and preferred therapist are reserved and prepared.`,
+    },
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: treatmentFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <>
-      <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-charcoal-fixed/60 z-10 pointer-events-none" />
-          <ImageCarousel
-            images={[service.image, service.altImage || service.image.replace('.jpeg', '-alt.jpeg')]}
-            alt={service.title}
-          />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Breadcrumb Navigation */}
+      <nav
+        aria-label="Breadcrumbs"
+        className="bg-linen/60 border-b border-espresso/10 py-3 text-xs text-taupe font-sans"
+      >
+        <div className="container mx-auto px-4 md:px-8 flex items-center space-x-2">
+          <Link href="/" className="hover:text-espresso transition-colors">
+            Home
+          </Link>
+          <ChevronRight size={12} />
+          <Link href="/services" className="hover:text-espresso transition-colors">
+            Treatments
+          </Link>
+          <ChevronRight size={12} />
+          <span className="text-espresso font-semibold">{treatment.name}</span>
         </div>
-        <div className="container relative z-20 mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
-            {service.title}
+      </nav>
+
+      {/* Cinematic Hero */}
+      <section className="relative h-[65vh] min-h-[480px] flex items-center justify-center bg-espresso overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={treatment.image}
+            alt={`${treatment.name} therapy suite`}
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/70 to-espresso/50" />
+        </div>
+
+        <div className="container relative z-10 mx-auto px-4 md:px-8 text-center max-w-4xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-ivory/15 backdrop-blur-md border border-champagne/30 text-champagne text-xs uppercase tracking-[0.2em] font-medium mb-6">
+            <span>{treatment.category}</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-medium text-ivory tracking-wide mb-4 leading-tight">
+            {treatment.name}
           </h1>
-          <div className="inline-flex items-center text-gold bg-charcoal-fixed/80 px-6 py-2 rounded-full font-sans">
-            <Clock className="w-5 h-5 mr-2" />
-            <span className="font-medium">{service.duration}</span>
+
+          <p className="text-base sm:text-lg text-champagne font-sans font-normal max-w-2xl mx-auto mb-8">
+            {treatment.tagline}
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-sans text-ivory">
+            <span className="inline-flex items-center gap-1.5 bg-espresso/80 backdrop-blur-md px-4 py-2 rounded-full border border-gold/30">
+              <Clock className="w-3.5 h-3.5 text-gold" />
+              <span>Duration: {treatment.duration}</span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 bg-espresso/80 backdrop-blur-md px-4 py-2 rounded-full border border-gold/30">
+              <Sparkles className="w-3.5 h-3.5 text-gold" />
+              <span>Starting from {treatment.startingPrice}</span>
+            </span>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-cream">
-        <div className="container mx-auto px-4 md:px-8 max-w-5xl">
-          <div className="bg-cream p-8 md:p-16 rounded-2xl shadow-xl border border-beige -mt-32 relative z-30">
-            <SectionHeading title="Overview" align="left" className="mb-6" />
-            <p className="text-lg text-charcoal-light font-sans leading-relaxed mb-12">
-              {service.description}
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-2xl font-heading font-bold text-charcoal mb-6">Key Benefits</h3>
-                <ul className="space-y-4">
-                  {service.benefits.map((benefit, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <CheckCircle2 className="w-6 h-6 text-gold mr-3 flex-shrink-0" />
-                      <span className="font-sans text-charcoal-light">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
+      {/* Main Details & Narrative Section */}
+      <section className="py-20 md:py-28 bg-ivory">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            
+            {/* Left Content Column (7 cols) */}
+            <div className="lg:col-span-7 space-y-12">
+              
+              {/* AEO: Direct Answer At-a-Glance Summary */}
+              <div className="p-6 bg-linen/70 rounded-2xl border border-gold/30">
+                <span className="text-[11px] uppercase tracking-[0.2em] text-gold font-semibold block mb-3">
+                  Quick Facts • At a Glance
+                </span>
+                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans">
+                  <div>
+                    <dt className="text-taupe font-medium uppercase tracking-wider">Classification</dt>
+                    <dd className="font-semibold text-espresso text-sm mt-0.5">{treatment.category}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-taupe font-medium uppercase tracking-wider">Verified Durations</dt>
+                    <dd className="font-semibold text-espresso text-sm mt-0.5">{treatment.duration}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-taupe font-medium uppercase tracking-wider">Starting Price</dt>
+                    <dd className="font-semibold text-espresso text-sm mt-0.5">{treatment.startingPrice} (Inclusive of suite amenities)</dd>
+                  </div>
+                  <div>
+                    <dt className="text-taupe font-medium uppercase tracking-wider">Treatment Setting</dt>
+                    <dd className="font-semibold text-espresso text-sm mt-0.5">Private soundproof suite, Jubilee Hills</dd>
+                  </div>
+                </dl>
               </div>
 
+              {/* Overview */}
               <div>
-                <h3 className="text-2xl font-heading font-bold text-charcoal mb-6">The Process</h3>
+                <span className="text-xs uppercase tracking-[0.25em] text-gold font-semibold block mb-2">
+                  Therapy Overview
+                </span>
+                <h2 className="font-heading text-3xl font-bold text-espresso mb-4">
+                  The Experience
+                </h2>
+                <p className="text-charcoal-light font-sans text-base sm:text-lg leading-relaxed">
+                  {treatment.longDescription}
+                </p>
+              </div>
+
+              {/* Alt Image & Atmosphere */}
+              <div className="relative aspect-[16/10] rounded-[22px] overflow-hidden shadow-luxury border border-espresso/10">
+                <img
+                  src={treatment.altImage}
+                  alt={`${treatment.name} technique detail`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-3 left-4 bg-espresso/80 backdrop-blur-md text-ivory text-xs px-3.5 py-1.5 rounded-full border border-white/10">
+                  Certified ARA Spa Protocol
+                </div>
+              </div>
+
+              {/* Key Benefits */}
+              <div>
+                <h3 className="font-heading text-2xl font-bold text-espresso mb-6">
+                  Key Physiological Benefits
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {treatment.benefits.map((benefit, idx) => (
+                    <div
+                      key={idx}
+                      className="p-4 bg-linen/50 rounded-xl border border-espresso/10 flex items-start gap-3"
+                    >
+                      <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                      <span className="font-sans text-sm text-espresso font-medium leading-snug">
+                        {benefit}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Step-by-Step Sequence */}
+              <div>
+                <h3 className="font-heading text-2xl font-bold text-espresso mb-6">
+                  Therapeutic Ritual Steps
+                </h3>
                 <ol className="space-y-4 relative border-l border-gold/30 ml-3">
-                  {service.process.map((step, idx) => (
+                  {treatment.process.map((step, idx) => (
                     <li key={idx} className="pl-6 relative">
-                      <div className="absolute w-3 h-3 bg-gold rounded-full -left-[6.5px] top-2" />
-                      <span className="font-sans text-charcoal-light block pt-0.5">{step}</span>
+                      <div className="absolute w-3 h-3 bg-gold rounded-full -left-[6.5px] top-1.5 ring-4 ring-ivory" />
+                      <div className="bg-linen/40 p-4 rounded-xl border border-espresso/5">
+                        <span className="text-[11px] uppercase tracking-wider text-taupe font-semibold block mb-0.5">
+                          Step 0{idx + 1}
+                        </span>
+                        <span className="font-sans text-espresso font-medium text-sm leading-relaxed block">
+                          {step}
+                        </span>
+                      </div>
                     </li>
                   ))}
                 </ol>
               </div>
+
+              {/* Sanitation & Care Note */}
+              <div className="p-6 bg-linen rounded-2xl border border-gold/30 flex items-start gap-4 text-xs text-charcoal-light font-sans">
+                <ShieldCheck className="w-6 h-6 text-gold shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-semibold text-espresso text-sm mb-1">
+                    Hygiene &amp; Privacy Commitment
+                  </h4>
+                  <p className="leading-relaxed">
+                    All treatments take place in private soundproof rooms. Fresh organic linens and sanitized equipment are prepared prior to each session. Our therapists respect modest draping throughout.
+                  </p>
+                </div>
+              </div>
+
+              {/* AEO: Frequently Asked Questions */}
+              <div className="space-y-4">
+                <h3 className="font-heading text-2xl font-bold text-espresso">
+                  Common Questions About {treatment.name}
+                </h3>
+                <div className="space-y-3">
+                  {treatmentFaqs.map((faq, idx) => (
+                    <div key={idx} className="p-5 bg-linen/50 rounded-xl border border-espresso/10">
+                      <h4 className="font-sans font-semibold text-espresso text-sm mb-2">
+                        {faq.q}
+                      </h4>
+                      <p className="text-charcoal-light font-sans text-xs leading-relaxed">
+                        {faq.a}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
 
-            <div className="mt-16 pt-12 border-t border-beige flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <Button size="lg" className="w-full sm:w-auto">Book This Treatment</Button>
-              </Link>
-              <Link href="/services">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto">Back to Services</Button>
-              </Link>
+            {/* Right Sticky Column: Verified Pricing Matrix & Quick Booking (5 cols) */}
+            <div className="lg:col-span-5 space-y-8">
+              
+              {/* Verified Pricing Breakdown Card */}
+              <div className="bg-linen/80 rounded-[24px] p-6 sm:p-8 border border-gold/30 shadow-luxury">
+                <div className="flex items-center justify-between pb-4 border-b border-espresso/10 mb-6">
+                  <div>
+                    <span className="text-xs uppercase tracking-widest text-gold font-semibold block">
+                      Verified Rates
+                    </span>
+                    <h3 className="font-heading text-2xl font-bold text-espresso">
+                      Duration &amp; Pricing
+                    </h3>
+                  </div>
+                  <Clock className="w-5 h-5 text-gold" />
+                </div>
+
+                <div className="space-y-3">
+                  {treatment.pricing.map((tier, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center justify-between p-3.5 rounded-xl bg-ivory border border-espresso/10 hover:border-gold transition-colors"
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-gold" />
+                        <span className="font-sans text-sm font-semibold text-espresso">
+                          {tier.time}
+                        </span>
+                      </div>
+                      <span className="font-heading text-lg font-bold text-espresso">
+                        {tier.price}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <p className="text-[11px] text-taupe font-sans mt-4 text-center">
+                  * All rates inclusive of private suite amenities and fresh herbal tea.
+                </p>
+
+                {/* Direct Action Buttons */}
+                <div className="pt-6 border-t border-espresso/10 mt-6 space-y-3">
+                  <a
+                    href="#inline-booking"
+                    className="block w-full"
+                  >
+                    <Button
+                      variant="luxury"
+                      size="lg"
+                      className="w-full text-xs uppercase tracking-widest py-3.5"
+                    >
+                      <Calendar className="w-4 h-4 mr-2" />
+                      <span>Request This Treatment</span>
+                    </Button>
+                  </a>
+
+                  <a
+                    href={whatsappBookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full"
+                  >
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="w-full text-xs uppercase tracking-widest py-3.5 border-[#25D366]/60 text-[#128C7E] hover:bg-[#25D366]/10"
+                    >
+                      <MessageSquare className="w-4 h-4 mr-2 text-[#25D366]" />
+                      <span>WhatsApp Reservation</span>
+                    </Button>
+                  </a>
+                </div>
+              </div>
+
+              {/* Concierge Call Box */}
+              <div className="p-6 bg-ivory rounded-[20px] border border-espresso/10 text-center">
+                <p className="text-xs text-taupe uppercase tracking-wider mb-1 font-semibold">
+                  Prefer To Speak With Someone?
+                </p>
+                <p className="text-xs text-charcoal-light mb-4">
+                  Call our Jubilee Hills reception for immediate availability.
+                </p>
+                <a
+                  href={`tel:${BUSINESS_INFO.phone}`}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-espresso hover:text-gold transition-colors"
+                >
+                  <Phone size={15} className="text-gold" />
+                  <span>{BUSINESS_INFO.displayPhone}</span>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Inline Dedicated Booking Section */}
+          <div id="inline-booking" className="mt-24 pt-16 border-t border-espresso/10">
+            <div className="max-w-3xl mx-auto">
+              <ContactForm defaultTreatmentSlug={treatment.slug} />
             </div>
           </div>
+
+          {/* Related Treatments Grid */}
+          <div className="mt-28 pt-16 border-t border-espresso/10">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 gap-4">
+              <div>
+                <span className="text-xs uppercase tracking-[0.25em] text-gold font-semibold block mb-1">
+                  Complementary Sessions
+                </span>
+                <h3 className="font-heading text-2xl sm:text-3xl font-bold text-espresso">
+                  Explore Other Treatments
+                </h3>
+              </div>
+              <Link href="/services">
+                <Button variant="outline" size="sm" className="text-xs uppercase tracking-wider">
+                  View Full Menu
+                </Button>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {relatedTreatments.map((t) => (
+                <ServiceCard key={t.id} treatment={t} />
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
     </>

@@ -1,43 +1,66 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions | ARA Spa',
-  description: 'Terms of service and booking conditions for ARA Spa.',
+  title: "Terms of Service & Spa Etiquette Guidelines",
+  description: "Terms of service, reservation policies, and sanctuary etiquette for ARA Spa in Jubilee Hills, Hyderabad.",
+  alternates: {
+    canonical: "/terms-conditions",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.araspa.co.in/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Terms & Conditions",
+      item: "https://www.araspa.co.in/terms-conditions",
+    },
+  ],
 };
 
 export default function TermsPage() {
   return (
-    <div className="py-24 bg-cream">
+    <div className="py-24 bg-ivory">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="container mx-auto px-4 max-w-4xl font-sans text-charcoal-light">
-        <h1 className="text-4xl md:text-5xl font-heading font-bold text-charcoal mb-8">Terms & Conditions</h1>
+        <span className="text-xs uppercase tracking-[0.25em] text-gold font-semibold block mb-2">
+          Sanctuary Guidelines
+        </span>
+        <h1 className="text-4xl md:text-5xl font-heading font-bold text-espresso mb-8">Terms &amp; Conditions</h1>
         
-        <div className="space-y-6 leading-relaxed">
-          <p>Last updated: {new Date().toLocaleDateString()}</p>
+        <div className="space-y-6 leading-relaxed bg-linen/50 p-8 sm:p-12 rounded-[24px] border border-espresso/10">
+          <p className="text-xs text-taupe">Last updated: {new Date().toLocaleDateString()}</p>
           
-          <h2 className="text-2xl font-heading font-bold text-charcoal mt-8 mb-4">1. Appointments & Reservations</h2>
+          <h2 className="text-2xl font-heading font-bold text-espresso mt-8 mb-4">1. Appointments &amp; Reservations</h2>
           <p>
-            Advanced booking is highly recommended to ensure your preferred time and service is available. 
-            A valid credit card may be required to hold your reservation.
+            Advance booking is strongly recommended to guarantee your preferred therapist, private suite, and time slot. When submitting an online enquiry, our concierge will confirm therapist availability prior to finalizing your booking.
           </p>
 
-          <h2 className="text-2xl font-heading font-bold text-charcoal mt-8 mb-4">2. Cancellation Policy</h2>
+          <h2 className="text-2xl font-heading font-bold text-espresso mt-8 mb-4">2. Arrival &amp; Etiquette</h2>
           <p>
-            We require a minimum of 24 hours notice to cancel or reschedule an appointment without penalty. 
-            Cancellations made with less than 24 hours notice will be subject to a 50% charge of the reserved service amount. 
-            No-shows will be charged 100% of the reserved service amount.
+            We kindly ask guests to arrive approximately 15 minutes before the scheduled start time. This allows you to check in peacefully and complete your preliminary consultation. In the event of late arrival, your therapy may be abbreviated to honor subsequent appointments.
           </p>
 
-          <h2 className="text-2xl font-heading font-bold text-charcoal mt-8 mb-4">3. Spa Etiquette</h2>
+          <h2 className="text-2xl font-heading font-bold text-espresso mt-8 mb-4">3. Sanctuary Environment</h2>
           <p>
-            To maintain our peaceful atmosphere, we ask that you silence your mobile devices upon arrival. 
-            Please arrive 15 minutes prior to your scheduled appointment time. Late arrivals will result in a 
-            shortened treatment time to ensure the next guest is not delayed.
+            To preserve the quiet stillness of our premises for all guests, mobile devices should be switched to silent mode upon entering the sanctuary.
           </p>
 
-          <h2 className="text-2xl font-heading font-bold text-charcoal mt-8 mb-4">4. Health Conditions</h2>
+          <h2 className="text-2xl font-heading font-bold text-espresso mt-8 mb-4">4. Health &amp; Physical Considerations</h2>
           <p>
-            Please advise us of any health conditions, allergies, or injuries that could affect your service 
-            when making your reservation. Our therapists will also conduct a brief consultation prior to your treatment.
+            Please notify your therapist or reception if you have acute spinal conditions, recent surgeries, high blood pressure, or are expecting. Our certified practitioners will customize techniques accordingly.
           </p>
         </div>
       </div>
